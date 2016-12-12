@@ -1,0 +1,62 @@
+<div class="profile-sidebar">
+    <!-- PORTLET MAIN -->
+    <div class="portlet light profile-sidebar-portlet">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic" style="margin-top: -20px;" >
+            <img ng-src="../../imgs/users/{{ user.profileImageURL }}" class="img-responsive" alt="">
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+            <div class="profile-usertitle-name">
+                {{ user.firstName }} {{ user.lastName }}
+            </div>
+            <div class="profile-usertitle-job" style="text-transform: none;">
+                Status :
+                        <span class="item-status" style="color: #f3565d;" ng-if="user.isBlocked" >
+                            <span class="badge badge-empty badge-danger"></span> Blocké
+                        </span>
+                        <span class="item-status" style="color:#45b6af;" ng-if="!user.isBlocked" >
+                            <span class="badge badge-empty badge-success"></span> Actif
+                        </span>
+            </div>
+            <div class="profile-usertitle-job" style="text-transform: none;">
+                Role : {{user.role}}
+            </div>
+            <div class="profile-usertitle-job" style="text-transform: none;">
+                Inscrit le : {{ user.created | date:'dd/MM/yyyy à HH:mm' }}
+            </div>
+            <div ng-if="user.gsm" class="profile-usertitle-job" style="text-transform: none;">
+                Téléphone: {{ user.gsm }}
+            </div>
+            <div class="profile-userbuttons">
+                <button type="button" class="btn btn-circle green-haze btn-sm" style="text-transform: none; font-size: 12px">
+                    {{ user.email }}
+                </button>
+            </div>
+        </div>
+        <!-- END SIDEBAR USER TITLE -->
+        <!-- SIDEBAR MENU -->
+        <div class="profile-usermenu">
+            <ul class="nav">
+                <li ng-class="{'active': activeLink==1}" >
+                    <a href="#/myprofile">
+                        <i class="icon-home"></i> Vue générale
+                    </a>
+                </li>
+                <li ng-class="{'active': activeLink==2}" >
+                    <a href="#/myaccident">
+                        <i class="icon-flag"></i> Accidents ajoutés
+                    </a>
+                </li>
+                <li ng-class="{'active': activeLink==3}" >
+                    <a href="#/mysetting">
+                        <i class="icon-settings"></i> Paramètre du compte
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- END MENU -->
+    </div>
+    <!-- END PORTLET MAIN -->
+</div>

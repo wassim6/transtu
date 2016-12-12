@@ -1,0 +1,1334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2959bcfd-9fef-44c4-b82e-d02a06c0d36f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/images/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet/images/layers-2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet/images/layers.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet/images/marker-icon-2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet/images/marker-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet/images/marker-shadow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/activityLog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/accident/edit/AccidentEditCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/accident/edit/accidentEdit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/accident/map/AccidentMapCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/accident/map/map.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/StatCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/blesses/StatBlessesCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/blesses/blesses.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/corporels/StatCorporelsCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/corporels/corporels.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/mortels/StatMortelsCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/mortels/mortels.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/physique/StatPhysiqueCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/physique/physique.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/sans/StatSansCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/stat/sans/sans.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/accidentAdded/AccidentAddedCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/accidentAdded/accidentAdded.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/add/UserAddCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/add/add.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/common/myProfileSidebar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/detail/UserDetailCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/detail/userDetail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/list/UserListCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/list/userList.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/myAccidentAdded/MyAccidentAddedCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/myAccidentAdded/myAccidentAdded.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/mySetting/MySettingCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/mySetting/mysetting.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/myprofile/MyProfileCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/myprofile/myprofile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/setting/UserSettingCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/setting/setting.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/components/user/userService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/accident/accidentService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/accident/add/AccidentAddCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/accident/add/accidentAdd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/accident/edit/AccidentEditCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/accident/edit/accidentEdit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/accident/list/AccidentListCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/accident/list/accidentList.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/accident/map/AccidentMapCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/accident/map/map.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/common/footer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/common/header.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/common/sidebar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/dashbord/DashboardCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/dashbord/dashboard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/login/LoginCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/login/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/login/loginService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/StatCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/blesses/StatBlessesCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/blesses/blesses.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/corporels/StatCorporelsCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/corporels/corporels.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/mortels/StatMortelsCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/mortels/mortels.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/physique/StatPhysiqueCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/physique/physique.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/sans/StatSansCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/sans/sans.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/stat.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/styles/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/tools/Bham_Geocodings_2014.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/tools/GeocodeData.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/tools/MergeGeocodes.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/css/bootstrap.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/bootstrap/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/crossfilter/crossfilter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/crossfilter/crossfilter.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/d3/d3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/d3/d3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/dc.js/dc.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/dc.js/dc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/dc.js/dc.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/dc.js/dc.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/jquery/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/jquery/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/jquery/jquery.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet.markercluster/MarkerCluster.Default.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet.markercluster/MarkerCluster.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet.markercluster/leaflet.markercluster-src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet.markercluster/leaflet.markercluster.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet/leaflet-src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet/leaflet.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/stat/vendor/leaflet/leaflet.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/accidentAdded/AccidentAddedCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/accidentAdded/accidentAdded.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/add/UserAddCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/add/add.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/common/myProfileSidebar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/detail/UserDetailCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/detail/userDetail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/list/UserListCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/list/userList.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/myAccidentAdded/MyAccidentAddedCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/myAccidentAdded/myAccidentAdded.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/mySetting/MySettingCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/mySetting/mysetting.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/myprofile/MyProfileCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/myprofile/myprofile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/setting/UserSettingCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/setting/setting.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/components/user/userService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/js/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/js/directives.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/js/filter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/js/route.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/js/scripts/table-advanced.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/user/js/scripts/table-ajax.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessAdd2Ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessAddCouponCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessAddCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessDetailCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessEditAdresseCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessEditCatCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessEditCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessEditImageCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessEditInformationCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessEditOpeningHourCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessEditProfileImageCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessEditTagCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessList2Ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessListCouponCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessListCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessListInvalidCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessListLonLat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessListNSCat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessSearchCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/controllers/BusinessStatCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/service/businessService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/add.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/add2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/addcoupon.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/detail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/editadresse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/editcat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/editimage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/editinformation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/editopeninghour.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/editprofileimage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/edittag.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/headerpageedit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/list2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/listLonLat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/listNSCat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/listcoupon.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/listinvalid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/searchBusiness.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/stat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/tab_business.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin/components/business/view/tab_business_uniq_name.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/admin/components/common/tab.html" afterPath="$PROJECT_DIR$/public/user/components/common/tab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routes.js" afterPath="$PROJECT_DIR$/app/config/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/accident-controller.js" afterPath="$PROJECT_DIR$/app/controllers/accident-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/notification-controller.js" afterPath="$PROJECT_DIR$/app/controllers/notification-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/user-controller.js" afterPath="$PROJECT_DIR$/app/controllers/user-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/accident.js" afterPath="$PROJECT_DIR$/app/models/accident.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.js" afterPath="$PROJECT_DIR$/app/models/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/accident/accidentService.js" afterPath="$PROJECT_DIR$/public/admin/components/accident/accidentService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/accident/add/AccidentAddCtrl.js" afterPath="$PROJECT_DIR$/public/admin/components/accident/add/AccidentAddCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/accident/add/accidentAdd.html" afterPath="$PROJECT_DIR$/public/admin/components/accident/add/accidentAdd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/accident/list/AccidentListCtrl.js" afterPath="$PROJECT_DIR$/public/admin/components/accident/list/AccidentListCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/accident/list/accidentList.html" afterPath="$PROJECT_DIR$/public/admin/components/accident/list/accidentList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/common/footer.html" afterPath="$PROJECT_DIR$/public/admin/components/common/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/common/header.html" afterPath="$PROJECT_DIR$/public/admin/components/common/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/common/sidebar.html" afterPath="$PROJECT_DIR$/public/admin/components/common/sidebar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/dashbord/DashboardCtrl.js" afterPath="$PROJECT_DIR$/public/admin/components/dashbord/DashboardCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/dashbord/dashboard.html" afterPath="$PROJECT_DIR$/public/admin/components/dashbord/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/components/login/LoginCtrl.js" afterPath="$PROJECT_DIR$/public/admin/components/login/LoginCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/index.html" afterPath="$PROJECT_DIR$/public/admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/js/app.js" afterPath="$PROJECT_DIR$/public/admin/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/js/route.js" afterPath="$PROJECT_DIR$/public/admin/js/route.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/js/scripts/table-advanced.js" afterPath="$PROJECT_DIR$/public/admin/js/scripts/table-advanced.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/admin/pages/css/profile-old.css" afterPath="$PROJECT_DIR$/public/assets/admin/pages/css/profile-old.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+    </list>
+    <ignored path="sntri.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="sntri" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="stat.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/admin/components/stat/stat.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blesses.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/admin/components/stat/blesses/blesses.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="accident-controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/accident-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="343" column="39" selection-start-line="343" selection-start-column="39" selection-end-line="343" selection-end-column="39" />
+              <folding>
+                <element signature="n#!!block;n#addAccident#0" expanded="false" />
+                <element signature="e#866#959#0" expanded="false" />
+                <element signature="n#!!block;n#addAccidentToUser#0;n#!!block;n#addAccident#0" expanded="false" />
+                <element signature="n#!!block;n#updateAccident#0" expanded="false" />
+                <element signature="e#4452#4545#0" expanded="false" />
+                <element signature="e#5684#5765#0" expanded="false" />
+                <element signature="e#6019#6272#0" expanded="false" />
+                <element signature="e#6038#6174#0" expanded="false" />
+                <element signature="n#!!block;n#removeAccident#0" expanded="false" />
+                <element signature="n#!!block;n#listAccident#0" expanded="false" />
+                <element signature="n#!!block;n#findAccidentById#0" expanded="false" />
+                <element signature="n#!!block;n#statAccident#0" expanded="false" />
+                <element signature="e#9293#9431#0" expanded="false" />
+                <element signature="n#!!block;n#statAccidentFilter#0" expanded="false" />
+                <element signature="e#12291#12429#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notification.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/notification.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="10" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="49" column="9" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/public/admin/components/stat/ok.json" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/scripts/charts.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/caz5-9y2j.json" />
+        <option value="$PROJECT_DIR$/app/models/user.js" />
+        <option value="$PROJECT_DIR$/app/models/accident.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/user/add/UserAddCtrl.js" />
+        <option value="$PROJECT_DIR$/app/controllers/user-controller.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/user/setting/setting.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/user/add/add.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/user/common/myProfileSidebar.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/user/detail/userDetail.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/accident/add/AccidentAddCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/accident/edit/AccidentEditCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/accident/list/accidentList.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/user/accidentAdded/accidentAdded.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/accident/edit/accidentEdit.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/accident/add/accidentAdd.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/accident/list/AccidentListCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/accident/map/map.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/accident/map/AccidentMapCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/dashbord/DashboardCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/accident/accidentService.js" />
+        <option value="$PROJECT_DIR$/app/config/routes.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/common/sidebar.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/StatCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/corporels/StatCorporelsCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/blesses/StatBlessesCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/mortels/StatMortelsCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/physique/StatPhysiqueCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/sans/StatSansCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/common/footer.html" />
+        <option value="$PROJECT_DIR$/app/controllers/notification-controller.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/dashbord/dashboard.html" />
+        <option value="$PROJECT_DIR$/public/admin/index.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/common/tab.html" />
+        <option value="$PROJECT_DIR$/public/user/components/common/header.html" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/user/myprofile/myprofile.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/user/mySetting/mysetting.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/user/myAccidentAdded/myAccidentAdded.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/common/header.html" />
+        <option value="$PROJECT_DIR$/public/admin/js/route.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/login/LoginCtrl.js" />
+        <option value="$PROJECT_DIR$/public/admin/js/app.js" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/stat.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/sans/sans.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/physique/physique.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/mortels/mortels.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/corporels/corporels.html" />
+        <option value="$PROJECT_DIR$/public/admin/components/stat/blesses/blesses.html" />
+        <option value="$PROJECT_DIR$/app/controllers/accident-controller.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <exe-path>$USER_HOME$/AppData/Roaming/npm/bower.cmd</exe-path>
+    <config-path>$PROJECT_DIR$/bower.json</config-path>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sntri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/admin" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="C:\Program Files\nodejs\node" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bou6\Desktop\sntri\public\admin\components\stat\sans" />
+      <recent name="C:\Users\bou6\Desktop\sntri\public\admin\components\stat\physique" />
+      <recent name="C:\Users\bou6\Desktop\sntri\public\admin\components\stat\mortels" />
+      <recent name="C:\Users\bou6\Desktop\sntri\public\admin\components\stat\blesses" />
+      <recent name="C:\Users\bou6\Desktop\sntri\public\admin\components\stat\corporels" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote">
+      <method />
+    </configuration>
+    <configuration default="true" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartRemoteDebugConfigurationType" factoryName="Dart Remote Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptNodeJsTraceType" factoryName="Spy-js for Node.js" config="" node="" node-params="" app="" app-params="" working-dir="$PROJECT_DIR$" proxy-port="3547" pass-parent-env="true">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTraceType" factoryName="Spy-js" node="" config="" has-config="false" system-proxy="true" proxy-port="3546" open-browser="false" browser="">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug">
+      <node-js-remote-debug />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeWebKit" factoryName="NW.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeunitConfigurationType" factoryName="Nodeunit">
+      <setting name="nodePath" value="project" />
+      <envs />
+      <setting name="nodeunitModuleDir" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="testType" value="JS_FILE" />
+      <setting name="jsFile" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhoneGap" factoryName="PhoneGap/Cordova">
+      <option name="myExecutable" />
+      <option name="myWorkDir" />
+      <option name="myCommand" />
+      <option name="myPassParent" value="true" />
+      <option name="myPlatform" />
+      <option name="myExtraArgs" />
+      <option name="hasTarget" value="false" />
+      <option name="target" />
+      <method />
+    </configuration>
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <envs />
+      <force value="false" />
+      <verbose value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="meteor-app-runner" factoryName="Meteor">
+      <option name="startBrowserSettings">
+        <browser url="http://localhost:3000" />
+      </option>
+      <meteor-runner-state>
+        <startBrowserSettings>
+          <browser url="http://localhost:3000" />
+        </startBrowserSettings>
+      </meteor-runner-state>
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2959bcfd-9fef-44c4-b82e-d02a06c0d36f" name="Default" comment="" />
+      <created>1480148683716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1480148683716</updated>
+      <workItem from="1480148687414" duration="4526000" />
+      <workItem from="1480176745363" duration="1795000" />
+      <workItem from="1480243628503" duration="7269000" />
+      <workItem from="1480595108836" duration="995000" />
+      <workItem from="1480668331394" duration="97652000" />
+      <workItem from="1481361305822" duration="15872000" />
+      <workItem from="1481454208320" duration="11909000" />
+      <workItem from="1481491803431" duration="22464000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="162482000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24816984" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="13" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="sntri" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="sntri" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/admin/components/user/setting/setting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/user/add/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="67" column="66" selection-start-line="67" selection-start-column="66" selection-end-line="67" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/accident/add/AccidentAddCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="41" selection-end-column="43" />
+          <folding>
+            <element signature="e#408#802#0" expanded="false" />
+            <element signature="e#467#796#0" expanded="false" />
+            <element signature="e#721#786#0" expanded="false" />
+            <element signature="e#1606#3495#0" expanded="false" />
+            <element signature="e#2347#3438#0" expanded="false" />
+            <element signature="e#2412#2554#0" expanded="false" />
+            <element signature="e#2640#3416#0" expanded="false" />
+            <element signature="e#2714#3390#0" expanded="false" />
+            <element signature="e#3090#3359#0" expanded="false" />
+            <element signature="e#3533#6982#0" expanded="false" />
+            <element signature="e#7009#8218#0" expanded="false" />
+            <element signature="e#7298#8211#0" expanded="false" />
+            <element signature="e#7339#7445#0" expanded="false" />
+            <element signature="e#7507#8201#0" expanded="false" />
+            <element signature="e#7569#8187#0" expanded="false" />
+            <element signature="e#7873#8168#0" expanded="false" />
+            <element signature="e#8245#8289#0" expanded="false" />
+            <element signature="e#8295#9343#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/accident/edit/AccidentEditCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+          <folding>
+            <element signature="e#346#400#0" expanded="false" />
+            <element signature="e#423#817#0" expanded="false" />
+            <element signature="e#2053#4120#0" expanded="false" />
+            <element signature="e#4159#7991#0" expanded="false" />
+            <element signature="e#8018#9152#0" expanded="false" />
+            <element signature="e#9179#9223#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/accident/list/accidentList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="205" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/user/accidentAdded/accidentAdded.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="304" column="41" selection-start-line="304" selection-start-column="41" selection-end-line="304" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/scripts/charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/scripts/socrata.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/accident/edit/accidentEdit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="245" column="43" selection-start-line="245" selection-start-column="43" selection-end-line="245" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/accident/list/AccidentListCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/accident/add/accidentAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="28" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/accident/map/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="123" selection-start-line="23" selection-start-column="123" selection-end-line="23" selection-end-column="123" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/accident/map/AccidentMapCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+          <folding>
+            <element signature="e#164#230#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/dashbord/DashboardCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="267" column="59" selection-start-line="267" selection-start-column="59" selection-end-line="267" selection-end-column="59" />
+          <folding>
+            <element signature="e#162#228#0" expanded="false" />
+            <element signature="e#262#9428#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="34" column="77" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/accident/accidentService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/common/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/accident.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/StatCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="87" selection-end-column="11" />
+          <folding>
+            <element signature="e#708#774#0" expanded="false" />
+            <element signature="e#9015#9194#0" expanded="false" />
+            <element signature="e#9228#9483#0" expanded="false" />
+            <element signature="e#9538#9656#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/corporels/StatCorporelsCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="264" column="84" selection-start-line="264" selection-start-column="70" selection-end-line="264" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/blesses/StatBlessesCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="264" column="86" selection-start-line="264" selection-start-column="86" selection-end-line="264" selection-end-column="86" />
+          <folding>
+            <element signature="e#737#803#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/mortels/StatMortelsCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="264" column="86" selection-start-line="264" selection-start-column="86" selection-end-line="264" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/physique/StatPhysiqueCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="263" column="86" selection-start-line="263" selection-start-column="86" selection-end-line="263" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/sans/StatSansCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="262" column="86" selection-start-line="262" selection-start-column="86" selection-end-line="262" selection-end-column="86" />
+          <folding>
+            <element signature="e#731#797#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/common/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/notification-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="64" column="15" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/dashbord/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="140" column="12" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#!!top" expanded="false" />
+            <element signature="e#3421#3892#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#6;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#6;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/user/components/common/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/common/tab.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="36" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/user/myprofile/myprofile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/user/mySetting/mysetting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/user/myAccidentAdded/myAccidentAdded.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/user/common/myProfileSidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="68" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/common/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="86" column="47" selection-start-line="86" selection-start-column="47" selection-end-line="86" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/js/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/user/list/UserListCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/user/userService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/login/LoginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="38" column="63" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+          <folding>
+            <element signature="e#867#1169#0" expanded="false" />
+            <element signature="e#1241#3349#0" expanded="false" />
+            <element signature="e#5145#5631#0" expanded="false" />
+            <element signature="e#6621#7200#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/stat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/sans/sans.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/physique/physique.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/mortels/mortels.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/corporels/corporels.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/components/stat/blesses/blesses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="49" column="9" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/notification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/accident-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="343" column="39" selection-start-line="343" selection-start-column="39" selection-end-line="343" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!block;n#addAccident#0" expanded="false" />
+            <element signature="e#866#959#0" expanded="false" />
+            <element signature="n#!!block;n#addAccidentToUser#0;n#!!block;n#addAccident#0" expanded="false" />
+            <element signature="n#!!block;n#updateAccident#0" expanded="false" />
+            <element signature="e#4452#4545#0" expanded="false" />
+            <element signature="e#5684#5765#0" expanded="false" />
+            <element signature="e#6019#6272#0" expanded="false" />
+            <element signature="e#6038#6174#0" expanded="false" />
+            <element signature="n#!!block;n#removeAccident#0" expanded="false" />
+            <element signature="n#!!block;n#listAccident#0" expanded="false" />
+            <element signature="n#!!block;n#findAccidentById#0" expanded="false" />
+            <element signature="n#!!block;n#statAccident#0" expanded="false" />
+            <element signature="e#9293#9431#0" expanded="false" />
+            <element signature="n#!!block;n#statAccidentFilter#0" expanded="false" />
+            <element signature="e#12291#12429#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,35 @@
+{
+  "name": "admin",
+  "description": "bower",
+  "main": "bower",
+  "keywords": [
+    "bower"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "^1.4.10",
+    "angular-bootstrap": "^2.0.0",
+    "angular-material": "^1.0.9",
+    "angular-ladda": "^0.4.1",
+    "angular-flash-alert": "^2.3.0",
+    "angular-timeago": "^0.4.4",
+    "angular-moment": "^0.10.3",
+    "angular-ui-bootstrap": "^2.0.0",
+    "angular-ui-notification": "^0.2.0",
+    "jquery": "^3.1.0",
+    "ngstorage": "^0.3.10",
+    "ngSweetAlert": "angular-sweetalert#^1.1.2",
+    "angularjs-slider": "^5.8.7",
+    "lf-ng-md-file-input": "^1.4.8",
+    "jquery.easy-pie-chart": "^2.1.6"
+  }
+}

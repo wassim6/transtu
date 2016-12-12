@@ -1,0 +1,105 @@
+<div class="page-sidebar-wrapper" >
+    <div class="page-sidebar navbar-collapse collapse">
+        <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200"
+            ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}" >
+            <li class="sidebar-search-wrapper">
+                <form class="sidebar-search sidebar-search-bordered" action="extra_search.html" method="POST">
+                    <a href="javascript:;" class="remove">
+                        <i class="icon-close"></i>
+                    </a>
+
+                </form>
+            </li>
+            <li class="start">
+                <a href="#/dashboard.html">
+                    <i class="icon-home"></i>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <!-- Accident -->
+            <li>
+                <a href="javascript:;">
+                    <i class="icon-settings"></i>
+                    <span class="title"> Accident</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="#/accident/add">
+                            <i class="icon-puzzle"></i> Ajouter un accident</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/accident/list">
+                            <i class="icon-puzzle"></i> Liste des accidents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/accident/map">
+                            <i class="icon-puzzle"></i> Map</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="icon-user"></i>
+                    <span class="title"> Utilisateurs</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="#/user/list">
+                            <i class="icon-puzzle"></i> Liste des utilisateurs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/user/add">
+                            <i class="icon-puzzle"></i> Ajouter un administateur</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="icon-bar-chart"></i>
+                    <span class="title"> Statistique</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="#/stat">
+                            <i class="icon-puzzle"></i> Statistique de tout les accidents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/stat/corporels">
+                            <i class="icon-puzzle"></i> Statistique des accidents corporels</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/stat/blesses">
+                            <i class="icon-puzzle"></i> Statistique des accidents avec blessés</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/stat/mortels">
+                            <i class="icon-puzzle"></i> Statistique des accidents mortels</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/stat/physique">
+                            <i class="icon-puzzle"></i> Statistique des accidents avec dégat physique</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/stat/sans">
+                            <i class="icon-puzzle"></i> Statistique des accidents sans dégat physique et corporels</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,254 @@
+<style>
+    .angular-google-map-container {
+        height: 400px !important;
+    }
+    .sample-show-hide {
+    transition: all linear 0.5s;
+    }
+    .sample-show-hide.ng-hide {
+        opacity: 0;
+    }
+    #calendar .btn-default {
+        color: black;
+    }
+</style>
+<h3 class="page-title">
+    Modifier un accident <i class="fa fa-edit"></i>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#/dashboard.html">Dashboard</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#/accident/eddit/{{accident._id}}">Modifier un accident</a>
+        </li>
+    </ul>
+</div>
+<div class="portlet box blue">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-edit"></i>Modifier un accident
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="reload" data-original-title="" title=""></a>
+        </div>
+    </div>
+
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form name="form" class="form-horizontal form-row-seperated" novalidate>
+
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="control-label col-md-3">Date et heure de l'accident</label>
+                    <div class="col-md-9">
+                        <div style="display:inline-block; min-height:290px;">
+                            <div style="float:left;margin-left:10px" id="calendar">
+                                <datepicker ng-model="accident.date" show-weeks="false" class="well"></datepicker>
+                            </div>
+                            <div style="margin-left:10px; display:inline-block">
+                                <timepicker ng-model="accident.date" ng-change="changed()" hour-step="1" minute-step="1" show-meridian="ismeridian"></timepicker>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Lieu</label>
+                    <div class="col-md-9">
+                        <input vs-google-autocomplete="optionsAutocompleteMaps"
+                                vs-autocomplete-validator
+                                ng-model="address.name"
+                                vs-place="address.place"
+                                vs-place-id="address.components.placeId"
+                                vs-street-number="address.components.streetNumber"
+                                vs-street="address.components.street"
+                                vs-city="address.components.city"
+                                vs-state="address.components.state"
+                                vs-country-short="address.components.countryCode"
+                                vs-country="address.components.country"
+                                vs-post-code="address.components.postCode"
+                                vs-district="address.components.district"
+                                vs-latitude="address.components.location.lat"
+                                vs-longitude="address.components.location.long"
+                                type="text"
+                                name="address"
+                                id="address"
+                                class="form-control"
+                                placeholder="Lieux de l'accident" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Géolocalisation</label>
+                    <div class="col-md-9">
+                        <div class="form-inline">
+                            <input type="text" placeholder="latitude" class="form-control" ng-model="accident.location.coordinates[0]"
+                                   style="width:300px;">
+                            <input type="text" placeholder="longitude" class="form-control" ng-model="accident.location.coordinates[1]"
+                                   style="width:300px;margin-left:5px;">
+                        </div>
+                        <button type="button" class="btn green" ng-click="refresh()" style="margin-top:10px;"><i
+                                class="fa fa-pencil"></i> Rafréchir la map
+                        </button>
+
+                        <div id="map_canvas" style="height:400px;">
+                            <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+                                <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events"
+                                                idkey="marker.id">
+                                </ui-gmap-marker>
+                            </ui-gmap-google-map>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Degrés de gravité de l'accident</label>
+                    <div class="col-md-9">
+                        <rzslider rz-slider-model="slider.value" rz-slider-options="slider.options"></rzslider>
+                        <br/><br/><br/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Type de bus</label>
+                    <div class="col-md-9">
+                        <select class="form-control" ng-model="accident.busType">
+                            <option value="1" >Articulé bus</option>
+                            <option value="2" >Articulé car</option>
+                            <option value="3" >Autocar confort</option>
+                            <option value="4" >Autobus standard</option>
+                            <option value="5" >Micro car</option>
+                            <option value="6" >Autocar standard</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Type de route</label>
+                    <div class="col-md-9">
+                        <select class="form-control" ng-model="accident.roadType" >
+                            <option value="1" >Routes nationales</option>
+                            <option value="2" >Routes secondaires</option>
+                            <option value="3" >Routes locales</option>
+                            <option value="4" >Autoroutes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Numéro de ligne</label>
+                    <div class="col-md-9">
+                        <input type="text" placeholder="Numéro de ligne" class="form-control" ng-model="accident.ligne">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">District</label>
+                    <div class="col-md-9">
+                        <input type="text" placeholder="District" class="form-control" ng-model="accident.district">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Numéro Bus</label>
+                    <div class="col-md-9">
+                        <input type="text" placeholder="Numéro Bus" class="form-control" ng-model="accident.numeroBus">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Numéro PV</label>
+                    <div class="col-md-9">
+                        <input type="text" placeholder="Numéro PV" class="form-control" ng-model="accident.numeroPv">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Poste de garde/police</label>
+                    <div class="col-md-9">
+                        <input type="text" placeholder="Poste de garde/police" class="form-control" ng-model="accident.posteGardePolice">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Dégat corporels</label>
+                    <div class="col-md-9">
+                        <div class="md-radio-inline">
+                            <div class="md-radio">
+                                <input type="radio" id="corporel0" ng-model="accident.degats_corporels" ng-value="false" name="corporel" class="md-radiobtn">
+                                <label for="corporel0">
+                                    <span></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> Pas de dégat </label>
+                            </div>
+                            <div class="md-radio has-error">
+                                <input type="radio" id="corporel1" ng-model="accident.degats_corporels" ng-value="true" name="corporel" class="md-radiobtn" >
+                                <label for="corporel1">
+                                    <span></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> Avec dégat </label>
+                            </div>
+                        </div>
+
+                        <div ng-show="accident.degats_corporels"  class="sample-show-hide"  >
+                            <div class="row" >
+                                <label class="col-md-3 control-label" style="text-align:left;">Nombre de blessés</label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" placeholder="Nombre de blessés" ng-model="accident.injuriesNumber">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:10px;" >
+                                <label class="col-md-3 control-label" style="text-align:left;" >Nombre de morts</label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" placeholder="Nombre de morts" ng-model="accident.deathsNumber">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3">Dégat physique</label>
+                    <div class="col-md-9">
+                        <div class="md-radio-inline">
+                            <div class="md-radio">
+                                <input type="radio" id="physique0" ng-model="accident.degats_physiques" ng-value="0" name="physique" class="md-radiobtn">
+                                <label for="physique0">
+                                    <span></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> Aucun dégat </label>
+                            </div>
+                            <div class="md-radio has-warning">
+                                <input type="radio" id="physique1" ng-model="accident.degats_physiques" ng-value="1" name="physique" class="md-radiobtn" >
+                                <label for="physique1">
+                                    <span></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> Léger dégat </label>
+                            </div>
+                            <div class="md-radio has-error">
+                                <input type="radio" id="physique2" ng-model="accident.degats_physiques" ng-value="2" name="physique" class="md-radiobtn" >
+                                <label for="physique2">
+                                    <span></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> Important dégat </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Observation</label>
+                    <div class="col-md-9">
+                        <textarea class="form-control" ng-model="accident.observation" ></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn green" ng-click="edit(form.$valid)" ng-disabled="disable"><i
+                                class="fa fa-pencil"></i> Modifier
+                        </button>
+                        <a href="#/accident/list" class="btn default">Annuler</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- END FORM-->
+    </div>
+</div>
+

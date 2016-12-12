@@ -1,0 +1,161 @@
+<style>
+    .page-content-wrapper .page-content {
+        background: #F1F3FA;
+    }
+</style>
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title" style="    margin-top: -10px;">
+    Information de l'utilisateur
+    <small></small>
+</h3>
+<div class="page-bar" style="background-color: #ffffff;">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#/dashboard.html">Dashbord</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#/user/list">Liste des utiisateur</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            Information de l'utilisateur
+        </li>
+    </ul>
+    <div class="page-toolbar" style="padding: 5px;" >
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                Actions <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li style="padding: 5px;">
+                    <a href="#" ng-if="user.isBlocked"  class="btn default btn-xs red" ng-click="unblock();" >
+                        <i class="fa fa-trash" style="color: #ffffff;"></i> Déblocker
+                    </a>
+                    <a href="#" ng-if="!user.isBlocked"  class="btn default btn-xs red" ng-click="block();" >
+                        <i class="fa fa-trash" style="color: #ffffff;"></i> Blocker
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row margin-top-20">
+    <div class="col-md-12">
+        <!-- BEGIN PROFILE SIDEBAR -->
+        <div class="profile-sidebar">
+            <!-- PORTLET MAIN -->
+            <div class="portlet light profile-sidebar-portlet">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic" style="margin-top: -20px;" >
+                    <img ng-src="../../imgs/users/{{ user.profileImageURL }}" class="img-responsive" alt="">
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        {{ user.firstName }} {{ user.lastName }}
+                    </div>
+                    <div class="profile-usertitle-job" style="text-transform: none;">
+                        Status :
+                        <span class="item-status" style="color: #f3565d;" ng-if="user.isBlocked" >
+                            <span class="badge badge-empty badge-danger"></span> Blocké
+                        </span>
+                        <span class="item-status" style="color:#45b6af;" ng-if="!user.isBlocked" >
+                            <span class="badge badge-empty badge-success"></span> Actif
+                        </span>
+                    </div>
+                    <div class="profile-usertitle-job" style="text-transform: none;">
+                        Role : {{user.role}}
+                    </div>
+                    <div class="profile-usertitle-job" style="text-transform: none;">
+                        Inscrit le : {{ user.created | date:'dd/MM/yyyy à HH:mm' }}
+                    </div>
+                    <div ng-if="user.gsm" class="profile-usertitle-job" style="text-transform: none;">
+                        Téléphone: {{ user.gsm }}
+                    </div>
+                    <div class="profile-userbuttons">
+                        <button type="button" class="btn btn-circle green-haze btn-sm" style="text-transform: none; font-size: 12px">
+                            {{ user.email }}
+                        </button>
+                    </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li>
+                            <a href="#/user/detail/{{ ::userId }}">
+                                <i class="icon-home"></i> Vue générale
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/user/accident/{{ ::userId }}">
+                                <i class="icon-flag"></i> Accidents ajoutés
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a  href="#/user/setting/{{ ::userId }}">
+                                <i class="icon-settings"></i> Paramètre du compte
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+            <!-- END PORTLET MAIN -->
+        </div>
+        <!-- END BEGIN PROFILE SIDEBAR -->
+        <!-- BEGIN PROFILE CONTENT -->
+        <div class="profile-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light">
+                        <div class="portlet-body">
+                            <div class="tab-content">
+                                <!-- PERSONAL INFO TAB -->
+                                <div class="tab-pane active" id="tab_1_1">
+                                    <form role="form" action="#">
+                                        <div class="form-group">
+                                            <label class="control-label">Nom</label>
+                                                <input type="text" readonly class="form-control" ng-value="user.firstName" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Prènom</label>
+                                            <input type="text" readonly class="form-control" ng-value="user.lastName" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Email</label>
+                                            <input type="text" readonly class="form-control" ng-value="user.email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Role</label>
+                                            <input type="text" readonly class="form-control" ng-value="user.role" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">date d'inscription</label>
+                                            <input type="text" readonly class="form-control" ng-value="user.created | date" />
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- END PERSONAL INFO TAB -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PROFILE CONTENT -->
+</div>
+<!-- END PAGE CONTENT-->
+
+
+<!-- BEGIN MAIN JS -->
+<script>
+    TableAdvanced.init();
+</script>
+<!-- END MAIN JS -->

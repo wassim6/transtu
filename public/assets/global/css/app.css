@@ -1,0 +1,9 @@
+.progress_circular {
+    margin-left: auto;
+    margin-right: auto;
+    display: inherit;
+}
+
+.clickedBusiness {
+    background: navajowhite !important;
+}

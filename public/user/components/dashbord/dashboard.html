@@ -1,0 +1,349 @@
+<style>
+    .page-content{
+        background-color:#f1f3fa;
+    }
+    .chart {
+        position: relative;
+        display: inline-block;
+        width: 110px;
+        height: 110px;
+        text-align: center;
+    }
+    .chart canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .percent {
+        display: inline-block;
+        line-height: 110px;
+        z-index: 2;
+    }
+    .percent:after {
+        content: '%';
+        margin-left: 0.1em;
+        font-size: .8em;
+    }
+    .angular {
+        margin-top: 100px;
+    }
+    .angular .chart {
+        margin-top: 0;
+    }
+    input {
+        display: block;
+        margin: auto;
+        margin-bottom: 3em;
+    }
+    .btn {
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background: #cccccc;
+        color: #ffffff;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 0.8em;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .btn:hover {
+        background: #333333;
+        color: #ffffff;
+    }
+    .span6 {
+        float: left;
+        width: 50%;
+    }
+    @media only screen and (max-width: 600px) {
+        li {
+            font-size: 14.4px;
+        }
+    }
+    @media only screen and (max-width: 430px) {
+        .span6 {
+            float: none;
+            width: 100%;
+        }
+        body {
+            padding-top: 0;
+        }
+        ul {
+            height: auto;
+            position: static;
+        }
+        li {
+            display: block;
+            width: 100%;
+        }
+        li a {
+            white-space: normal;
+        }
+        a.active:after {
+            display: none;
+        }
+    }
+</style>
+
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat red-intense">
+            <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    55
+                </div>
+                <div class="desc">
+                    Nombre total des accidents
+                </div>
+            </div>
+            <a class="more" href="#/accident/list">
+                Voir plus <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat blue-madison">
+            <div class="visual">
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    6
+                </div>
+                <div class="desc">
+                    Nombre total des utilisateur
+                </div>
+            </div>
+            <a class="more" href="#/user/list">
+                Voir plus <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="tiles">
+        <div class="tile bg-green-meadow">
+            <div class="tile-body">
+                <i class="fa fa-bell-o"></i>
+            </div>
+            <div class="tile-object">
+                <div class="name">
+                    Notifications
+                </div>
+                <div class="number">
+                    6
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="tile bg-yellow-saffron">
+            <div class="corner">
+            </div>
+            <div class="tile-body">
+                <i class="fa fa-clock-o"></i>
+            </div>
+            <div class="tile-object">
+                <div class="name">
+                    En ettente de validation
+                </div>
+                <div class="number">
+                    2
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</div>
+
+
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="portlet light ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-cursor font-purple-intense hide"></i>
+                    <span class="caption-subject font-purple-intense bold uppercase">Répartition Géographique des accidents</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div id="map">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="portlet light ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-cursor font-purple-intense hide"></i>
+                    <span class="caption-subject font-purple-intense bold uppercase">Statistique des accidents</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row">
+                    <div id="year-selector" class="chart col-md-4" style="width: 50%;height: 100%;">
+                        <span>Année</span>
+                        <a class="reset" data-chart="year" style="display: none;">reset</a>
+                        <div class="u-cf"></div>
+                    </div>
+                    <div id="month-selector" class="chart col-md-4" style="width: 50%;height: 100%;">
+                        <span>Mois</span>
+                        <a class="reset" data-chart="month" style="display: none;">reset</a>
+                        <div class="u-cf"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="day-of-week-selector" class="chart col-md-4" style="width: 50%;height: 100%;">
+                        <span>Jour de la semaine</span>
+                        <a class="reset" data-chart="dayOfWeek" style="display: none;">reset</a>
+                        <div class="u-cf"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="portlet light ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-cursor font-purple-intense hide"></i>
+                    <span class="caption-subject font-purple-intense bold uppercase">Dégat des accidents</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="chart" easypiechart options="sansDegat" percent="percent" >
+                            <span class="percent" ng-bind="percent"></span>
+                        </span>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sans dégats</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="chart" easypiechart options="degatPhysique" percent="percent">
+                            <span class="percent" ng-bind="percent"></span>
+                        </span>
+                        <p>Avec dégats physique</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="chart" easypiechart options="degatCorporel" percent="percent">
+                            <span class="percent" ng-bind="percent"></span>
+                        </span>
+                        <p>Avec dégats corporel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="portlet light ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-share font-blue-steel hide"></i>
+                    <span class="caption-subject font-blue-steel bold uppercase">Dernier accident ajouté</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
+                    <ul class="feeds">
+                        <li>
+                            <div class="col1">
+                                <div class="cont">
+                                    <div class="cont-col1">
+                                        <div class="label label-sm label-info">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="cont-col2">
+                                        <div class="desc">
+                                            You have 4 pending tasks. <span class="label label-sm label-warning ">
+														Take action <i class="fa fa-share"></i>
+														</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col2">
+                                <div class="date">
+                                    Just now
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scroller-footer">
+                    <div class="btn-arrow-link pull-right">
+                        <a href="javascript:;">See All Records</a>
+                        <i class="icon-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="portlet light ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-share font-blue-steel hide"></i>
+                    <span class="caption-subject font-blue-steel bold uppercase">Nouveaux utilisateurs inscrit</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
+                    <ul class="feeds">
+                        <li>
+                            <div class="col1">
+                                <div class="cont">
+                                    <div class="cont-col1">
+                                        <div class="label label-sm label-info">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="cont-col2">
+                                        <div class="desc">
+                                            You have 4 pending tasks. <span class="label label-sm label-warning ">
+														Take action <i class="fa fa-share"></i>
+														</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col2">
+                                <div class="date">
+                                    Just now
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scroller-footer">
+                    <div class="btn-arrow-link pull-right">
+                        <a href="javascript:;">See All Records</a>
+                        <i class="icon-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- END MAIN CONTENT -->
+<!-- BEGIN MAIN JS & CSS -->
+<script>
+    //Tasks.initDashboardWidget();
+</script>
+<!-- BEGIN MAIN JS & CSS -->
+

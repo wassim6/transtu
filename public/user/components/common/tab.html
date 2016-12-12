@@ -1,0 +1,10 @@
+<ul class="nav navbar-nav" ng-repeat="item in items">
+    <!-- DOC: Remove data-hover="megadropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
+    <li class="classic-menu-dropdown {{item.status}}">
+        <a href="{{item.url}}">
+            {{item.name}}
+            <span class="selected">
+					</span>
+        </a>
+    </li>
+</ul>

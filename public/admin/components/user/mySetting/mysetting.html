@@ -1,0 +1,142 @@
+<style>
+    .page-content-wrapper .page-content {
+        background: #F1F3FA;
+    }
+    .lf-ng-md-file-input .lf-ng-md-file-input-preview-container .lf-ng-md-file-input-drag-text-container {
+        height: 70px;
+    }
+    .img-thumbnail{
+        padding:0px;
+        border:0px;
+        border-radius:4px;
+        display:inline-block;
+        max-width:100%;
+        height:auto;
+    }
+
+</style>
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar" style="background-color: #ffffff;">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#/dashboard.html">Dashbord</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            Mon profil
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row margin-top-20">
+    <div class="col-md-12">
+        <!-- BEGIN PROFILE SIDEBAR -->
+        <div data-ng-include="'../admin/components/user/common/myProfileSidebar.html'" ng-init="activeLink=3">
+        </div>
+        <!-- END BEGIN PROFILE SIDEBAR -->
+        <!-- BEGIN PROFILE CONTENT -->
+        <div class="profile-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light">
+                        <div class="portlet-title tabbable-line">
+                            <div class="caption caption-md">
+                                <i class="icon-globe theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase">Paramètre du compte</span>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li ng-class="{'active': activeTab==1}" ng-click="changeActivTab(1)">
+                                    <a>Information personnelle</a>
+                                </li>
+                                <li ng-class="{'active': activeTab==2}" ng-click="changeActivTab(2)">
+                                    <a>Changer photo</a>
+                                </li>
+                                <li ng-class="{'active': activeTab==3}" ng-click="changeActivTab(3)">
+                                    <a>Changer mot de passe</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="tab-content">
+                                <!-- PERSONAL INFO TAB -->
+                                <div class="tab-pane" ng-class="{'active': activeTab==1}" id="tab_1_1">
+                                    <form role="form" >
+                                        <div class="form-group">
+                                            <label class="control-label">Nom</label>
+                                            <input type="text" class="form-control" ng-model="user.firstName"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Prènom</label>
+                                            <input type="text" class="form-control" ng-model="user.lastName"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Email</label>
+                                            <input type="text" class="form-control" ng-model="user.email"/>
+                                        </div>
+                                        <div class="margiv-top-10">
+                                            <button ng-click="editInfo()" class="btn green-haze"> Sauvegarder </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- END PERSONAL INFO TAB -->
+                                <!-- CHANGE AVATAR TAB -->
+                                <div class="tab-pane" ng-class="{'active': activeTab==2}" id="tab_1_2">
+                                    <form name="testForm" role="form">
+                                        <div class="form-group">
+                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <lf-ng-md-file-input   name="files00" lf-files="files" lf-browse-label="Importer une photo"
+                                                                       lf-remove-label="Supprimer" lf-required lf-filesize="3MB" accept="image/*" lf-mimetype="image/*"
+                                                                       lf-drag-and-drop-label="Glisser-déposer ici une image" drag preview lf-placeholder="Sélectionnez des images">
+                                                </lf-ng-md-file-input>
+                                            <div class="clearfix margin-top-10">
+                                                <span class="label label-danger">NOTE! </span>
+                                                <span>&nbsp;&nbsp;&nbsp;la Taille de l'image doit être inférieure à 3 MB</span>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top-10">
+                                            <button class="btn green-haze" ng-click="editImage(files)">Sauvegarder </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- END CHANGE AVATAR TAB -->
+                                <!-- CHANGE PASSWORD TAB -->
+                                <div class="tab-pane" ng-class="{'active': activeTab==3}" id="tab_1_3">
+                                    <form >
+                                        <div class="form-group">
+                                            <label class="control-label">Mot de passe actuelle</label>
+                                            <input type="password" ng-model="u.oldPass" class="form-control"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Nouveau mot de passe</label>
+                                            <input type="password" ng-model="u.newPass" class="form-control"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Retapez votre mot de passe</label>
+                                            <input type="password" ng-model="u.newPass2" class="form-control"/>
+                                        </div>
+                                        <div class="margin-top-10">
+                                            <button ng-click="editPass()" class="btn green-haze">Changer mot de passe </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- END CHANGE PASSWORD TAB -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PROFILE CONTENT -->
+    </div>
+</div>
+<!-- END PAGE CONTENT-->
+
+
+<!-- BEGIN MAIN JS -->
+<script>
+    TableAdvanced.init();
+</script>
+<!-- END MAIN JS -->

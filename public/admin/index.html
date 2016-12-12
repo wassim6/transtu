@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="fr_FR" data-ng-app="MetronicApp">
+<head>
+    <title data-ng-bind="'Administration TRANSTU | ' + $state.current.data.pageTitle"></title>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../assets/admin/layout/css/bootstrap.css"/>
+
+    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="../assets/angu-script/ngprogress/ngProgress.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/angu-script/select/select.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/angu-script/toaster/toaster.css" rel="stylesheet" type="text/css"/>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/admin/pages/css/selectize.default.css" rel="stylesheet" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="../assets/global/css/angular-flash.min.css"/>
+    <link href="../assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="../assets/admin/pages/css/profile-old.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/admin/pages/css/profile.css" />
+
+
+    <link id="ng_load_plugins_before"/>
+
+
+    <link href="../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../assets/admin/layout/css/app.v1.css"/>
+    <link href="../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <link href="../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+    <!-- Base Styling  -->
+
+    <link href="../assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="../assets/global/img/favicon.png"/>
+    <link type="text/css" rel="stylesheet" href="../bower_components/angular-flash-alert/dist/angular-flash.min.css"/>
+    <link rel="stylesheet" href="../bower_components/angular-ui-notification/dist/angular-ui-notification.min.css">
+    <link rel="stylesheet" href="../assets/global/css/animation.css">
+    <link rel="stylesheet" href="../bower_components/ladda/dist/ladda-themeless.min.css">
+    <link rel="stylesheet" href="../assets/global/css/app.css">
+    <link rel="stylesheet" href="../assets/global/css/jquery-ui.css">
+    <link rel="stylesheet" href="../bower_components/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/angularjs-slider/dist/rzslider.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="../bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.css">
+
+
+    <link rel="stylesheet" href="../admin/components/stat/vendor/dc.js/dc.css">
+    <link rel="stylesheet" href="../admin/components/stat/vendor/leaflet/leaflet.css">
+    <link rel="stylesheet" href="../admin/components/stat/vendor/leaflet.markercluster/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="../admin/components/stat/styles/main.css">
+
+
+
+</head>
+
+
+<body ng-controller="AppController"
+      class="page-header-fixed page-sidebar-closed-hide-logo page-quick-sidebar-over-content page-on-load"
+      ng-class="{'page-container-bg-solid': settings.layout.pageBodySolid, 'page-sidebar-closed': settings.layout.pageSidebarClosed}">
+
+<div ng-spinner-bar class="page-spinner-bar">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
+
+<toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right'}"></toaster-container>
+
+<div data-ng-include="'../admin/components/common/header.html'" data-ng-controller="HeaderController"
+     class="page-header navbar navbar-fixed-top">
+</div>
+
+<div class="clearfix">
+</div>
+
+<div class="page-container">
+    <div ng-show="AuthenticatedUser.login">
+        <div data-ng-include="'../admin/components/common/sidebar.html'" data-ng-controller="SidebarController"
+            ng-show="AuthenticatedUser.login">
+        </div>
+    </div>
+
+    <div class="page-content-wrapper" style="background-color: #364150;">
+        <div class="page-content">
+            <div ui-view class="">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div data-ng-include="'../admin/components/common/footer.html'" data-ng-controller="FooterController" class="page-footer" style="background-color:#3d3d3d" >
+</div>
+
+
+<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-ui.js"></script>
+<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../bower_components/angular/angular.js" type="text/javascript"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
+        type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+
+<script src="../admin/components/stat/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../admin/components/stat/vendor/d3/d3.min.js"></script>
+<script src="../admin/components/stat/vendor/crossfilter/crossfilter.min.js"></script>
+<script src="../admin/components/stat/vendor/dc.js/dc.min.js"></script>
+<script src="../admin/components/stat/vendor/leaflet/leaflet.js"></script>
+<script src="../admin/components/stat/vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
+
+<script src="../assets/global/plugins/angular-aria.min.js"></script>
+<script src="../assets/global/plugins/angular-messages.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script src="../bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
+<script src="../assets/global/plugins/angularjs/angular-sanitize.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/angularjs/angular-touch.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/angularjs/plugins/angular-ui-router.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js"></script>
+<script src="../bower_components/angular-flash-alert/dist/angular-flash.min.js"></script>
+<script type="text/javascript" src="../assets/angu-script/angular-jwt.min.js"></script>
+
+<script src="../assets/global/plugins/select2/select2.min.js" type="text/javascript"></script>
+
+<script src="../assets/angu-script/select/select.min.js" type="text/javascript"></script>
+<script src="../assets/angu-script/toaster/toaster.js" type="text/javascript"></script>
+
+
+<script src="../assets/global/plugins/datatables/all.min.js" type="text/javascript"></script>
+<script src="../admin/js/scripts/table-advanced.js" type="text/javascript"></script>
+
+<script src="../assets/angu-script/angular-base64-upload.min.js" type="text/javascript"></script>
+<script src="../assets/angu-script/ngprogress/ngprogress.min.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+<!--<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>-->
+<script src="../assets/angu-script/lodash/dist/lodash.min.js" type="text/javascript"></script>
+<script src="../assets/angu-script/angular-simple-logger/dist/angular-simple-logger.min.js"
+        type="text/javascript"></script>
+<script src="../assets/angu-script/angular-google-maps/dist/angular-google-maps.min.js" type="text/javascript"></script>
+
+
+<script src="../assets/angu-script/angular-resource.min.js" type="text/javascript"></script>
+<script src="../assets/angu-script/angular-datatables.min.js" type="text/javascript"></script>
+<script src="../assets/angu-script/angular-confirm.js" type="text/javascript"></script>
+
+<script src="../admin/js/app.js" type="text/javascript"></script>
+<script src="../admin/js/filter.js" type="text/javascript"></script>
+
+<script src="../admin/js/route.js" type="text/javascript"></script>
+<script src="../admin/js/directives.js" type="text/javascript"></script>
+
+
+<!-- BEGIN APP LEVEL JQUERY SCRIPTS -->
+<script src="../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="../assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<!-- END APP LEVEL JQUERY SCRIPTS -->
+
+
+<script src="../assets/global/plugins/morris/morris.min.js"></script>
+<script src="../assets/global/plugins/morris/raphael-min.js"></script>
+<script src="../assets/global/plugins/jquery.sparkline.min.js"></script>
+<script src="../assets/global/plugins/icheck/icheck.min.js"></script>
+<script src="../assets/global/plugins/highstock.js"></script>
+<script src="../assets/global/plugins/exporting.js"></script>
+<script src="../assets/global/plugins/ngStorage.min.js"></script>
+<script src="../bower_components/ladda/dist/spin.min.js"></script>
+<script src="../bower_components/ladda/dist/ladda.min.js"></script>
+<script src="../bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
+<script src="../bower_components/vsGoogleAutocomplete/dist/vs-google-autocomplete.min.js"></script>
+<script src="../bower_components/vsGoogleAutocomplete/dist/vs-autocomplete-validator.min.js"></script>
+<script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<script src="../bower_components/ngSweetAlert/SweetAlert.min.js"></script>
+<script src="../bower_components/angularjs-slider/dist/rzslider.min.js"></script>
+<script src="../bower_components/angular-timeago/dist/angular-timeago.min.js"></script>
+<script src="../bower_components/angular-timeago/src/languages/time-ago-language-fr_FR.js"></script>
+
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script src="../bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.js"></script>
+
+<script src="../bower_components/jquery.easy-pie-chart/dist/angular.easypiechart.min.js"></script>
+
+
+<!--
+<script src="admin/components/stat/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="admin/components/stat/vendor/d3/d3.min.js"></script>
+<script src="admin/components/stat/vendor/crossfilter/crossfilter.min.js"></script>
+<script src="admin/components/stat/vendor/dc.js/dc.min.js"></script>
+<script src="admin/components/stat/vendor/leaflet/leaflet.js"></script>
+<script src="admin/components/stat/vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
+<script src="admin/components/stat/scripts/socrata.js"></script>
+<script src="admin/components/stat/scripts/charts.js"></script>
+-->
+
+
+<script type="text/javascript">
+    /* Init Metronic's core jquery plugins and layout scripts */
+    $(document).ready(function () {
+        Metronic.init(); // Run metronic theme
+        Metronic.setAssetsPath('assets/'); // Set the assets folder path
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<h3 class="page-title">
+    Ajouter un utilisateur <i class="fa fa-plus"></i>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#/dashboard.html">Dashboard</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#/user/add">Ajouter un utilisateur</a>
+        </li>
+    </ul>
+</div>
+<div class="portlet box blue">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-plus"></i>Ajouter un utilisateur
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="reload" data-original-title="" title=""></a>
+        </div>
+    </div>
+
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form name="form" class="form-horizontal form-row-seperated" novalidate>
+
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="control-label col-md-3">Prènom</label>
+                    <div class="col-md-9">
+                        <input type="text" placeholder="Prènom" class="form-control" ng-model="user.firstName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Nom</label>
+                    <div class="col-md-9">
+                        <input type="text" placeholder="Nom" class="form-control" ng-model="user.lastName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Adresse email</label>
+                    <div class="col-md-9">
+                        <input type="email" placeholder="Adresse email" class="form-control" ng-model="user.email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Mot de passe</label>
+                    <div class="col-md-9">
+                        <input type="password" placeholder="Mot de passe" class="form-control" ng-model="user.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">Role</label>
+                    <div class="col-md-9">
+                        <select class="form-control" ng-model="user.role" >
+                            <option value="admin" >Administrateur</option>
+                            <option value="APCR" >APCR</option>
+                            <option value="responsable" >Responsable</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">GSM</label>
+                    <div class="col-md-9">
+                        <input type="text" placeholder="numéro de Téléphone" class="form-control" ng-model="user.gsm">
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn green" ng-click="add(form.$valid)" ng-disabled="disable"><i
+                                class="fa fa-pencil"></i> Ajouter
+                        </button>
+                        <a href="#/user/list" class="btn default">Annuler</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+        <!-- END FORM-->
+    </div>
+</div>
+

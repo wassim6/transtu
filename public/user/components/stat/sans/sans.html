@@ -1,0 +1,72 @@
+<style>
+    .chart, .pie, .bars {
+        height: 300px;
+        width: auto;
+        font-family: "Open Sans", sans-serif !important;
+        font-size: 14px;
+    }
+</style>
+<div id="loader">
+    <img src="admin/components/stat/images/ajax-loader.gif" alt="Loading data...">
+</div>
+<div id="mainframe" style="margin-top: -35px;">
+    <h1>Statistique des accident sans dégat physique et corporels</h1>
+    <div id="map">
+    </div>
+    <div id="filter-panel" class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#filter-panel" href="#date-filters">
+                        Filtrer par Date
+                        <span class="active-filters"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="date-filters" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row">
+                        <div id="year-selector" class="chart col-md-4" style="height: 100%;">
+                            <span>Année</span>
+                            <a class="reset" data-chart="year" style="display: none;">reset</a>
+                            <div class="u-cf"></div>
+                        </div>
+                        <div id="month-selector" class="chart col-md-4" style="height: 100%;">
+                            <span>Mois</span>
+                            <a class="reset" data-chart="month" style="display: none;">reset</a>
+                            <div class="u-cf"></div>
+                        </div>
+                        <div id="day-selector" class="chart col-md-4" style="height: 100%;">
+                            <span>Jour</span>
+                            <a class="reset" data-chart="day" style="display: none;">reset</a>
+                            <div class="u-cf"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="day-of-week-selector" class="chart col-md-4" style="height: 100%;">
+                            <span>Jour de la semaine</span>
+                            <a class="reset" data-chart="dayOfWeek" style="display: none;">reset</a>
+                            <div class="u-cf"></div>
+                        </div>
+                        <div id="time-selector" class="chart col-md-4" style="height: 100%;">
+                            <span>Heure</span>
+                            <a class="reset" data-chart="time" style="display: none;">reset</a>
+                            <div class="u-cf"></div>
+                        </div>
+                        <div id="trimestre-selector" class="chart col-md-4" style="height: 100%;">
+                            <span>Trimestre</span>
+                            <a class="reset" data-chart="trimestre" style="display: none;">reset</a>
+                            <div class="u-cf"></div>
+                        </div>
+                        <div id="semestre-selector" class="chart col-md-4" style="height: 100%;">
+                            <span>Trimestre</span>
+                            <a class="reset" data-chart="semestre" style="display: none;">reset</a>
+                            <div class="u-cf"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
