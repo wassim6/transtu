@@ -42,24 +42,52 @@ MetronicApp.controller('UserListCtrl', function ($rootScope, $scope, $http, $tim
         });
     };
 
-    $scope.open = function (id, size, index) {
-        var accident = AccidentService.FindById().get({ID: id}, function () {
-            //console.log(accident);
-            var modalInstance = $modal.open({
-                templateUrl: 'myModalContent.html',
-                controller: 'ModalInstanceCtrl',
-                size: size,
-                resolve: {
-                    items: function () {
-                        return accident;
-                    },
-                    index: function () {
-                        return index;
-                    }
+    $scope.editRole = function (user, index) {
+        var modalInstance = $modal.open({
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',
+            size: 'md',
+            resolve: {
+                items: function () {
+                    return user;
+                },
+                index: function () {
+                    return index;
                 }
-            });
+            }
+        });
+        modalInstance.result.then(function (index) {
+            //console.log(index);
+            //$scope.accidents.splice(index, 1);
+        }, function () {
+
         });
     };
-
 });
+
+function ModalInstanceCtrl($scope, $modalInstance, $timeout , items, toaster, index, $location, UserService) {
+    $scope.item = items;
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+    $scope.edit = function () {
+        UserService.EditRole().save({
+            "id":items._id,
+            "role":$scope.item.role
+        }, function (res) {
+            if(res.code>0) {
+                toaster.success("success", "Modification enregistré");
+                //$scope.item.index=index;
+                $modalInstance.close($scope.item);
+            }
+            else
+                toaster.error("erreur", "Une erreur est survenue. Veuillez réessayer plus tard");
+        }, function (err) {
+            toaster.error("erreur", "Une erreur est survenue. Veuillez réessayer plus tard");
+        });
+    };
+};
+
+
 

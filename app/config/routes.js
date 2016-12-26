@@ -5,6 +5,7 @@ var apiRouter = express.Router();
 
 var userController = require('../controllers/user-controller');
 var accidentController = require('../controllers/accident-controller');
+var notificationController = require('../controllers/notification-controller');
 
 
 apiRouter.post('/user/register', userController.registerUser);
@@ -20,6 +21,7 @@ apiRouter.get('/user/myactivitylog', userController.myActivityLog);
 apiRouter.post('/user/editimage', userController.editProfileImage);
 apiRouter.post('/user/editinfo', userController.editInfo);
 apiRouter.post('/user/editpass', userController.editPass);
+apiRouter.post('/user/editrole', userController.editRole);
 
 
 apiRouter.post('/admin/register', userController.registerAdmin);
@@ -33,6 +35,16 @@ apiRouter.post('/accident/list', accidentController.listAccident);
 apiRouter.get('/accident/find/:id', accidentController.findAccidentById);
 apiRouter.get('/accident/stat', accidentController.statAccident);
 apiRouter.get('/accident/stat/:filter', accidentController.statAccidentFilter);
+
+
+apiRouter.get('/dashbord/stat', accidentController.dashbordStat);
+apiRouter.get('/dashbord/degat', accidentController.dashbordDegatAccidentStat);
+
+apiRouter.get('/notification/navbar', notificationController.notificationNavBar);
+apiRouter.get('/notification/myNotification', notificationController.myNotification);
+
+
+
 
 
 

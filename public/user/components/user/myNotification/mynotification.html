@@ -1,0 +1,232 @@
+<style>
+    .angular-google-map-container {
+        height: 400px !important;
+    }
+</style>
+<div class="col-md-12">
+    <!-- BEGIN PORTLET -->
+    <div class="portlet light tasks-widget">
+        <div class="portlet-title">
+            <div class="caption caption-md">
+                <i class="icon-bar-chart theme-font hide"></i>
+                <span class="caption-subject font-blue-madison bold uppercase">Notification</span>
+                <span class="caption-helper">{{ notificationNotRead }} nouveaux</span>
+            </div>
+            <div class="inputs">
+                <div class="portlet-input input-small input-inline">
+                    <div class="input-icon right">
+                        <i class="icon-magnifier"></i>
+                        <input type="text" class="form-control form-control-solid" placeholder="recherche ...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="task-content">
+                <div class="scroller" style="min-height: 400px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+                    <!-- START TASK LIST -->
+                    <ul class="task-list">
+                        <li ng-repeat="n in notifications" >
+                            <div class="task-title">
+                                <span class="task-title-sp">
+                                    <a href="" ng-click="open(n.accident._id, 'lg', $index)" > un nouveau accident ajouté.</a>
+                                </span>
+                                <span class="label label-sm label-danger" ng-show="!n.isRead">
+                                    <span class="task-bell">
+                                        <i class="fa fa-bell-o" ></i>
+                                    </span>
+                                </span>
+                                <span class="label label-sm label-success" ng-show="n.isRead">
+                                    <span class="task-bell">
+                                        <i class="fa fa-check" ></i>
+                                    </span>
+                                </span>
+                                <span class="time" style="float: right">{{ n.date | timeAgo }}</span>
+                            </div>
+                            <div class="task-config">
+                                <div class="task-config-btn btn-group">
+                                    <a class="btn btn-xs default" ng-click="markAsRead(n.accident._id, $index)" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                        <i class="fa fa-check"></i> Marquer comme lue
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- END START TASK LIST -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PORTLET -->
+</div>
+
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Détail de l'accident</h3>
+    </div>
+    <div class="modal-body">
+        <div class="portlet-body" id="chats">
+            <div class="scroller" style="height: 100%;" data-always-visible="1" data-rail-visible1="1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="portlet sale-summary">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    Information générale
+                                </div>
+                                <div class="tools">
+                                    <a class="reload" href="javascript:;" data-original-title="" title="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <span class="sale-info">Date et heure de l'accident<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num">{{item.date | date:'dd/MM/yyyy HH:mm'}}</span>
+                                    </li>
+                                    <li>
+                                        <span class="sale-info">Lieu <i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num">{{item.adress.name}} </span>
+                                    </li>
+                                    <li>
+                                        <span class="sale-info">Ligne<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num">{{item.ligne}}</span>
+                                    </li>
+                                    <li>
+                                        <span class="sale-info">Type de route<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num" ng-switch on="item.roadType" >
+                                            <div  ng-switch-when="1">Routes nationales</div>
+                                            <div  ng-switch-when="2">Routes secondaires</div>
+                                            <div  ng-switch-when="3">Routes locales</div>
+                                            <div  ng-switch-when="4">Autoroutes</div>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="sale-info">Type de bus<i class="fa fa-img-up"></i></span>
+                                         <span class="sale-num" ng-switch on="item.busType" >
+                                            <div  ng-switch-when="1">Articulé bus</div>
+                                            <div  ng-switch-when="2">Articulé car</div>
+                                            <div  ng-switch-when="3">Autocar confort</div>
+                                            <div  ng-switch-when="4">Autobus standard</div>
+                                            <div  ng-switch-when="5">Micro car</div>
+                                            <div  ng-switch-when="6">Autocar standard</div>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="sale-info">Type de l'accident<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num" ng-switch on="item.accident_type" >
+                                            <div  ng-switch-when="1">Anomalie</div>
+                                            <div  ng-switch-when="2">Incident</div>
+                                            <div  ng-switch-when="3">Incident grave</div>
+                                            <div  ng-switch-when="4">Accident grave</div>
+                                            <div  ng-switch-when="5">Accident majeur</div>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="sale-info">Degats physiquet<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num"> {{ item.degats_physiques }}</span>
+                                    </li>
+                                    <li>
+                                        <span class="sale-info">Degats corporels<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num"> {{item.injuriesNumber}} Bléssés / {{item.deathsNumber}} Mort</span>
+                                    </li>
+                                    <li ng-if="item.district">
+                                        <span class="sale-info">District<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num"> {{item.district}}</span>
+                                    </li>
+                                    <li ng-if="item.numeroBus">
+                                        <span class="sale-info">Numéro bus<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num"> {{item.numeroBus}}</span>
+                                    </li>
+                                    <li ng-if="item.numeroPv">
+                                        <span class="sale-info">Numéro PV<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num"> {{item.numeroPv}}</span>
+                                    </li>
+                                    <li ng-if="item.posteGardePolice">
+                                        <span class="sale-info">Poste<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num"> {{item.posteGardePolice}}</span>
+                                    </li>
+                                    <li ng-if="item.observation" >
+                                        <span class="sale-info">Observation<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num"> {{item.observation}}</span>
+                                    </li>
+                                    <li>
+                                        <span class="sale-info">Date d'insertion<i class="fa fa-img-up"></i></span>
+                                        <span class="sale-num">{{item.created | date:'dd/MM/yyyy HH:mm'}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portlet sale-summary">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    Information de l'utilisateur
+                                </div>
+                                <div class="tools">
+                                    <a class="reload" href="javascript:;" data-original-title="" title="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="portlet light profile-sidebar-portlet" style="padding-top: 0px !important;">
+                                    <div class="profile-userpic">
+                                        <img ng-src="../../imgs/users/{{ item.user.profileImageURL }}"
+                                             class="img-responsive" alt="" style="width: 25%;height: 25%;">
+                                    </div>
+                                    <div class="profile-usertitle">
+                                        <div class="profile-usertitle-name">
+                                            Ajouter par : {{ item.user.firstName }} {{ item.user.lastName }}
+                                        </div>
+                                        <div class="profile-usertitle-job">
+                                            Role : {{item.user.role}}
+                                        </div>
+                                    </div>
+                                    <!-- SIDEBAR BUTTONS -->
+                                    <div class="profile-userbuttons">
+                                        <button type="button" class="btn btn-circle green-haze btn-sm" style="text-transform: none; font-size: 12px">
+                                            {{ item.user.email }}
+                                        </button>
+                                        <button type="button" ng-click="detailUser()" class="btn btn-circle btn-danger btn-sm" style="text-transform: none; font-size: 12px">
+                                            Voir profil
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="portlet sale-summary">
+                        <div class="portlet-title">
+                            <div class="caption" style="padding-left: 20px;">
+                                Information Géographique
+
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="portlet light profile-sidebar-portlet" style="padding-top: 0px !important;">
+                                <div id="map_canvas" style="height:400px;" ng-if="render" >
+                                    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+                                        <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events"
+                                                        idkey="marker.id">
+                                        </ui-gmap-marker>
+                                    </ui-gmap-google-map>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a ng-click="editAccident()" class="btn btn-primary">
+            <i class="fa fa-edit"></i> Modifier
+        </a>
+        <button class="btn" ng-click="cancel()">Fermer</button>
+    </div>
+</script>
+

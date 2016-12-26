@@ -55,6 +55,20 @@ function addAccident(request, response) {
             response.json({message: 'Not able to create Accident', code: -2});
         }
         else {
+            var accountSid = 'ACa24f3fbe6ab44e04749e1e9be285dddf';
+            var authToken = '24da0d805d1a00df83537c626b14e079';
+
+            //require the Twilio module and create a REST client
+            var client = require('twilio')(accountSid, authToken);
+
+            client.messages.create({
+                to: "+21652255732",
+                from: "+18574538775",
+                body: "This is the ship that made the Kessel Run in fourteen parsecs?",
+            }, function(err, message) {
+                console.log(message);
+            });
+
             //console.log(accident);
             addAccidentToUser(accident);
             notificationController.addNotification(accident);
@@ -136,7 +150,7 @@ function updateAccident(request, response) {
 };
 
 function removeAccident(request, response) {
-    var token = userController.isAuthorized(request, response, ["admin"]);
+    var token = userController.isAuthorized(request, response);
     if (typeof(token) == 'undefined' || token == -1)
         return;
 
@@ -184,7 +198,7 @@ function removeAccident(request, response) {
 };
 
 function listAccident(request, response) {
-    var token = userController.isAuthorized(request, response, ["admin", "APCR"]);
+    var token = userController.isAuthorized(request, response);
     if (typeof(token) == 'undefined' || token == -1)
         return;
     Accident.find({}, function (error, accidents) {
@@ -206,13 +220,15 @@ function findAccidentById(request, response) {
             console.error('Could not retrieve accident b/c:', error);
             response.json({message: 'error: accident not found', code: -1});
         }
-        else
+        else {
+            notificationController.readNotificationAccident(token.id, accident);
             response.json({data: accident, code: 1});
+        }
     }).populate("user", '-password');
 };
 
 function statAccident(request, response) {
-    var token = userController.isAuthorized(request, response, ["admin", "APCR"]);
+    var token = userController.isAuthorized(request, response);
     if (typeof(token) == 'undefined' || token == -1)
         return;
     Accident.find({}, function (error, accidents) {
@@ -269,7 +285,7 @@ function statAccident(request, response) {
 };
 
 function statAccidentFilter(request, response) {
-    var token = userController.isAuthorized(request, response, ["admin", "APCR"]);
+    var token = userController.isAuthorized(request, response);
     if (typeof(token) == 'undefined' || token == -1)
         return;
     var filter = {};
@@ -334,21 +350,50 @@ function statAccidentFilter(request, response) {
 };
 
 function dashbordStat(request, response) {
-    var token = userController.isAuthorized(request, response, ["admin", "APCR"]);
+    var token = userController.isAuthorized(request, response);
     if (typeof(token) == 'undefined' || token == -1)
         return;
     Accident.find({}, function (error, accidents20) {
         User.find({}, function (error, users20) {
             Accident.find().count(function(err, countAccident){
                 User.find().count(function(err, countUser){
-                    Notification.find({}, function (error, notification) {
-
-                    }).limit(10);
+                    response.json({
+                        accidents20: accidents20,
+                        users20:users20,
+                        countAccident:countAccident,
+                        countUser:countUser,
+                        code: 1});
                 });
             });
-            response.json({data: result, code: 1});
         }).sort({'created': -1}).limit(20);
     }).sort({'date': -1}).limit(20);
+};
+
+function dashbordDegatAccidentStat(request, response) {
+    var token = userController.isAuthorized(request, response);
+    if (typeof(token) == 'undefined' || token == -1)
+        return;
+    Accident.find({}, function (error, accidents) {
+        var sansDegat = 0, degatPhysique = 0, degatCorporel = 0;
+        for(var i=0; i<accidents.length; i++){
+            if(accidents[i].degats_physiques==0 && accidents[i].degats_corporels==false){
+                sansDegat++;
+            }
+            else if(accidents[i].degats_corporels==true){
+                degatCorporel++;
+            }
+            else if(accidents[i].degats_physiques>0){
+                degatPhysique++;
+            }
+        }
+        var totalAccident = accidents.length;
+        response.json({
+            degatCorporel:degatCorporel,
+            degatPhysique:degatPhysique,
+            sansDegat:sansDegat,
+            totalAccident:totalAccident,
+            code: 1});
+    });
 };
 
 
@@ -360,5 +405,6 @@ module.exports = {
     findAccidentById: findAccidentById,
     statAccident:statAccident,
     statAccidentFilter:statAccidentFilter,
-    dashbordStat:dashbordStat
+    dashbordStat:dashbordStat,
+    dashbordDegatAccidentStat:dashbordDegatAccidentStat
 };

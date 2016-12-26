@@ -1,6 +1,6 @@
 'use strict';
 
-MetronicApp.controller('LoginCtrl', function ($rootScope, $scope, $http, $timeout, LoginService, toaster, $location, $state, ngProgressFactory) {
+MetronicApp.controller('LoginCtrl', function ($rootScope, $scope, $http, jwtHelper, $timeout, LoginService, toaster, $location, $state, ngProgressFactory) {
 
 
     $scope.progressbar = ngProgressFactory.createInstance();
@@ -27,10 +27,11 @@ MetronicApp.controller('LoginCtrl', function ($rootScope, $scope, $http, $timeou
                 $scope.disable = false;
                 $scope.progressbar.complete();
                 toaster.success("success", "Welcome");
-
+                var tokenPayload = jwtHelper.decodeToken(response.token);
                 $rootScope.AuthenticatedUser = {
                     login: response.login,
-                    token: response.token
+                    token: response.token,
+                    role: tokenPayload.role
                 };
                 setCookie('tmp', response.token, 14);
                 setCookie('login', response.login, 14);

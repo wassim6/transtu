@@ -135,13 +135,13 @@ MetronicApp.run(function ($rootScope, $state, $location, $http, $resource, jwtHe
                 $location.path("/login");
             }
             else {
+                var tokenPayload = jwtHelper.decodeToken(user);
                 $rootScope.AuthenticatedUser = {
                     login: login,
-                    token: user
+                    token: user,
+                    role: tokenPayload.role
                 };
-                
                 $http.defaults.headers.common['x-access-token'] =  $rootScope.AuthenticatedUser.token;
-
             }
         }
 
@@ -193,15 +193,34 @@ MetronicApp.controller('AppController', ['$scope', '$rootScope', 'urlService', f
 }]);
 
 /* Setup Layout Part - Header */
-MetronicApp.controller('HeaderController', ['$scope', '$http', '$rootScope', '$state', '$stateParams', '$location', 'urlService', function ($scope, $http, $rootScope, $state, $stateParams, $location, urlService) {
+MetronicApp.controller('HeaderController', function ($timeout, $interval, $scope, $http, $rootScope, $state, $stateParams, $location, urlService, $resource) {
 
     $scope.$on('$includeContentLoaded', function () {
         Layout.initHeader(); // init header
-        var urlS = 'http://localhost:8080/api/';
-        $http.get(urlS+ 'user/myprofile').then(function (response) {
-            $scope.userHeader = response.data.data;
+        $resource(urlService + 'user/myprofile').get({}, function (response) {
+            $scope.userHeader = response.data;
         });
     });
+    $timeout(function () {
+        $resource(urlService + 'user/myprofile').get({}, function (response) {
+            $scope.userHeader = response.data;
+        });
+    }, 1000);
+
+    $timeout(function () {
+        $resource(urlService + 'notification/navbar').get({}, function (res) {
+            $scope.headerNotification5 = res.notification5;
+            $scope.headerNotificationNotRead = res.notificationNotRead;
+        });
+    }, 1000);
+
+    $interval(function () {
+        $resource(urlService + 'notification/navbar').get({}, function (res) {
+            $scope.headerNotification5 = res.notification5;
+            $scope.headerNotificationNotRead = res.notificationNotRead;
+        });
+    }, 10000);
+
 
     $scope.logOut = function () {
         var urlS = 'http://localhost:8080/api/';
@@ -222,7 +241,7 @@ MetronicApp.controller('HeaderController', ['$scope', '$http', '$rootScope', '$s
 
     };
 
-}]);
+});
 
 /* Setup Layout Part - Sidebar */
 MetronicApp.controller('SidebarController', ['$scope', function ($scope) {

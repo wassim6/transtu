@@ -72,16 +72,20 @@
                             {{ u.role }}
                         </td>
                         <td>
-                            <a href="#/user/detail/{{u._id}}" class="btn default btn-xs green" >
+                            <a href="#/user/detail/{{u._id}}" class="btn default btn-xs green">
                                 <i class="fa fa-search"></i> Détail
                             </a>
-                            <a href="#/user/edit/{{u._id}}" class="btn default btn-xs purple">
+                            <a ng-click="editRole(u, $index)" class="btn default btn-xs purple">
                                 <i class="fa fa-edit"></i> Modifier
                             </a>
-                            <button ng-if="u.isBlocked" class="btn default btn-xs red" confirm-button="unblock(u._id, $index);" message="Est vous sûre de Débloker ce utilisateur ? " yes="Déblocker" no="Annuler">
+                            <button ng-if="u.isBlocked" class="btn default btn-xs red"
+                                    confirm-button="unblock(u._id, $index);"
+                                    message="Est vous sûre de Débloker ce utilisateur ? " yes="Déblocker" no="Annuler">
                                 <i class="fa fa-trash"></i> Déblocker
                             </button>
-                            <button ng-if="!u.isBlocked" class="btn default btn-xs red" confirm-button="block(u._id, $index);" message="Est vous sûre de Bloker ce utilisateur ? " yes="Blocker" no="Annuler">
+                            <button ng-if="!u.isBlocked" class="btn default btn-xs red"
+                                    confirm-button="block(u._id, $index);"
+                                    message="Est vous sûre de Bloker ce utilisateur ? " yes="Blocker" no="Annuler">
                                 <i class="fa fa-trash"></i> Blocker
                             </button>
                         </td>
@@ -97,108 +101,29 @@
 
 <script type="text/ng-template" id="myModalContent.html">
     <div class="modal-header">
-        <h3 class="modal-title">Détail de l'accident</h3>
+        <h3 class="modal-title">Modifier role de l'utilisateur</h3>
     </div>
     <div class="modal-body">
         <div class="portlet-body" id="chats">
             <div class="scroller" style="height: 100%;" data-always-visible="1" data-rail-visible1="1">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="portlet sale-summary">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    Information générale
-                                </div>
-                                <div class="tools">
-                                    <a class="reload" href="javascript:;" data-original-title="" title="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="portlet-body">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <span class="sale-info">Date et heure de l'accident<i class="fa fa-img-up"></i></span>
-                                        <span class="sale-num">{{item.date | date:'dd/MM/yyyy HH:mm'}}</span>
-                                    </li>
-                                    <li>
-                                        <span class="sale-info">Lieu <i class="fa fa-img-up"></i></span>
-                                        <span class="sale-num">{{item.region}} </span>
-                                    </li>
-                                    <li>
-                                        <span class="sale-info">Ligne<i class="fa fa-img-up"></i></span>
-                                        <span class="sale-num">{{item.ligne}}</span>
-                                    </li>
-                                    <li>
-                                        <span class="sale-info">Type de route<i class="fa fa-img-up"></i></span>
-                                        <span class="sale-num"> {{item.roadType}}</span>
-                                    </li>
-                                    <li>
-                                        <span class="sale-info">Type de bus<i class="fa fa-img-up"></i></span>
-                                        <span class="sale-num">{{item.busType}}</span>
-                                    </li>
-                                    <li>
-                                        <span class="sale-info">Type de l'accident<i class="fa fa-img-up"></i></span>
-                                        <span class="sale-num"> ####</span>
-                                    </li>
-                                    <li>
-                                        <span class="sale-info">Degats physiquet<i class="fa fa-img-up"></i></span>
-                                        <span class="sale-num"> {{ item.degats_physiques }}</span>
-                                    </li>
-                                    <li>
-                                        <span class="sale-info">Degats corporels<i class="fa fa-img-up"></i></span>
-                                        <span class="sale-num"> {{item.injuriesNumber}} Bléssés / {{item.deathsNumber}} Mort</span>
-                                    </li>
-                                    <li>
-                                        <span class="sale-info">Date d'insertion<i class="fa fa-img-up"></i></span>
-                                        <span class="sale-num">{{item.created | date:'dd/MM/yyyy HH:mm'}}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portlet sale-summary">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    Information de l'utilisateur
-                                </div>
-                                <div class="tools">
-                                    <a class="reload" href="javascript:;" data-original-title="" title="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="portlet-body">
-                                <div class="portlet light profile-sidebar-portlet" style="padding-top: 0px !important;">
-                                    <div class="profile-userpic">
-                                        <img ng-src="../../imgs/users/{{ item.user.profileImageURL }}"
-                                             class="img-responsive" alt="" style="width: 25%;height: 25%;">
-                                    </div>
-                                    <div class="profile-usertitle">
-                                        <div class="profile-usertitle-name">
-                                            Ajouter par : {{ item.user.firstName }} {{ item.user.lastName }}
-                                        </div>
-                                        <div class="profile-usertitle-job">
-                                            Role : {{item.user.role}}
+                            <div class="portlet-body form">
+                                <form name="form" class="form-horizontal form-row-seperated" novalidate>
+                                    <div class="form-body">
+                                        <label class="control-label col-md-3">Role</label>
+                                        <div class="col-md-9">
+                                            <select class="form-control" ng-model="item.role">
+                                                <option value="user">Utilisateur</option>
+                                                <option value="admin">Administrateur</option>
+                                                <option value="APCR">APCR</option>
+                                                <option value="responsable">Responsable</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <!-- SIDEBAR BUTTONS -->
-                                    <div class="profile-userbuttons">
-                                        <button type="button" class="btn btn-circle green-haze btn-sm" style="text-transform: none; font-size: 12px">
-                                            {{ item.user.email }}
-                                        </button>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="portlet sale-summary">
-                        <div class="portlet-title">
-                            <div class="caption" style="padding-left: 20px;">
-                                Information Géographique
-                            </div>
-                            A completer !!
                         </div>
                     </div>
                 </div>
@@ -207,11 +132,8 @@
     </div>
     </div>
     <div class="modal-footer">
-        <a href="#/accident/edit/{{item._id}}" class="btn btn-primary">
+        <button type="submit" class="btn green" ng-click="edit()" ng-disabled="disable">
             <i class="fa fa-edit"></i> Modifier
-        </a>
-        <button class="btn default red" confirm-button="delete(item._id);" message="Est vous sûre de supprimer cet accident ? " yes="Supprimer" no="Annuler">
-            <i class="fa fa-trash"></i> Suprimer
         </button>
         <button class="btn" ng-click="cancel()">Fermer</button>
     </div>

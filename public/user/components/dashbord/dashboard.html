@@ -95,7 +95,7 @@
             </div>
             <div class="details">
                 <div class="number">
-                    55
+                    {{ countAccident }}
                 </div>
                 <div class="desc">
                     Nombre total des accidents
@@ -113,7 +113,7 @@
             </div>
             <div class="details">
                 <div class="number">
-                    6
+                    {{ countUser }}
                 </div>
                 <div class="desc">
                     Nombre total des utilisateur
@@ -126,6 +126,7 @@
     </div>
     <div class="tiles">
         <div class="tile bg-green-meadow">
+            <a href="#/user/mynotification">
             <div class="tile-body">
                 <i class="fa fa-bell-o"></i>
             </div>
@@ -134,9 +135,10 @@
                     Notifications
                 </div>
                 <div class="number">
-                    6
+                    {{ notificationNotRead }}
                 </div>
             </div>
+            </a>
         </div>
         <!--
         <div class="tile bg-yellow-saffron">
@@ -222,20 +224,20 @@
             <div class="portlet-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <span class="chart" easypiechart options="sansDegat" percent="percent" >
-                            <span class="percent" ng-bind="percent"></span>
+                        <span class="chart" easypiechart options="sansDegat" percent="percentSansDegat" >
+                            <span class="percent" ng-bind="percentSansDegat"></span>
                         </span>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sans dégats</p>
                     </div>
                     <div class="col-md-4">
-                        <span class="chart" easypiechart options="degatPhysique" percent="percent">
-                            <span class="percent" ng-bind="percent"></span>
+                        <span class="chart" easypiechart options="degatPhysique" percent="percentDegatPhysique">
+                            <span class="percent" ng-bind="percentDegatPhysique"></span>
                         </span>
                         <p>Avec dégats physique</p>
                     </div>
                     <div class="col-md-4">
-                        <span class="chart" easypiechart options="degatCorporel" percent="percent">
-                            <span class="percent" ng-bind="percent"></span>
+                        <span class="chart" easypiechart options="degatCorporel" percent="percentDegatCorporel">
+                            <span class="percent" ng-bind="percentDegatCorporel"></span>
                         </span>
                         <p>Avec dégats corporel</p>
                     </div>
@@ -258,26 +260,24 @@
             <div class="portlet-body">
                 <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
                     <ul class="feeds">
-                        <li>
+                        <li ng-repeat="a in accidents20" >
                             <div class="col1">
                                 <div class="cont">
                                     <div class="cont-col1">
-                                        <div class="label label-sm label-info">
-                                            <i class="fa fa-check"></i>
+                                        <div class="label label-sm label-danger">
+                                            <i class="fa fa-plus"></i>
                                         </div>
                                     </div>
                                     <div class="cont-col2">
                                         <div class="desc">
-                                            You have 4 pending tasks. <span class="label label-sm label-warning ">
-														Take action <i class="fa fa-share"></i>
-														</span>
+                                            Un accident signalé à lieu à {{ a.adress.district}} {{ a.adress.name }}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col2">
                                 <div class="date">
-                                    Just now
+                                    {{ a.created | timeAgo }}
                                 </div>
                             </div>
                         </li>
@@ -285,7 +285,7 @@
                 </div>
                 <div class="scroller-footer">
                     <div class="btn-arrow-link pull-right">
-                        <a href="javascript:;">See All Records</a>
+                        <a href="#/accident/list">Voir tout les accidents</a>
                         <i class="icon-arrow-right"></i>
                     </div>
                 </div>
@@ -303,26 +303,24 @@
             <div class="portlet-body">
                 <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
                     <ul class="feeds">
-                        <li>
+                        <li ng-repeat="u in users20" >
                             <div class="col1">
                                 <div class="cont">
                                     <div class="cont-col1">
                                         <div class="label label-sm label-info">
-                                            <i class="fa fa-check"></i>
+                                            <i class="fa fa-user"></i>
                                         </div>
                                     </div>
                                     <div class="cont-col2">
                                         <div class="desc">
-                                            You have 4 pending tasks. <span class="label label-sm label-warning ">
-														Take action <i class="fa fa-share"></i>
-														</span>
+                                            {{ u.firstName }} {{ u.lastName }} est inscrit
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col2">
                                 <div class="date">
-                                    Just now
+                                    {{ u.created | timeAgo }}
                                 </div>
                             </div>
                         </li>
@@ -330,7 +328,7 @@
                 </div>
                 <div class="scroller-footer">
                     <div class="btn-arrow-link pull-right">
-                        <a href="javascript:;">See All Records</a>
+                        <a href="#/user/list">Voir tout les utilisateurs</a>
                         <i class="icon-arrow-right"></i>
                     </div>
                 </div>

@@ -16,6 +16,7 @@ MetronicApp.factory('UserService', function ($resource, urlService) {
     service.EditImage = EditImage;
     service.EditInfo = EditInfo;
     service.EditPass = EditPass;
+    service.EditRole = EditRole;
 
     return service;
 
@@ -52,6 +53,9 @@ MetronicApp.factory('UserService', function ($resource, urlService) {
     }
     function EditPass() {
         return $resource(urlService + 'user/editpass');
+    }
+    function EditRole() {
+        return $resource(urlService + 'user/editrole');
     }
 
 

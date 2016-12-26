@@ -1,6 +1,6 @@
 'use strict';
 
-MetronicApp.controller('DashboardCtrl', function ($scope, $timeout, AccidentService) {
+MetronicApp.controller('DashboardCtrl', function ($scope, $timeout, AccidentService, DashbordService) {
 
 
     AccidentService.StatAccident().get({}, function (res) {
@@ -261,8 +261,26 @@ MetronicApp.controller('DashboardCtrl', function ($scope, $timeout, AccidentServ
         dc.renderAll();
 
     };
+    
+    DashbordService.DashbordStat().get({}, function (res) {
+        $scope.countAccident = res.countAccident;
+        $scope.countUser = res.countUser;
+        $scope.accidents20 = res.accidents20;
+        $scope.users20 = res.users20;
+    });
 
-    $scope.percent = 65;
+    DashbordService.DashbordDegat().get({}, function (res) {
+        $scope.totalAccident = res.totalAccident;
+        $scope.percentDegatCorporel =  Math.trunc((res.degatCorporel/$scope.totalAccident) *100);
+        $scope.percentDegatPhysique = Math.trunc((res.degatPhysique/$scope.totalAccident) *100);
+        $scope.percentSansDegat = Math.trunc((res.sansDegat/$scope.totalAccident) *100);
+    });
+
+    DashbordService.NotificationNavbar().get({}, function (res) {
+        $scope.notification5 = res.notification5;
+        $scope.notificationNotRead = res.notificationNotRead;
+    });
+
     $scope.sansDegat = {barColor:'#3b9c96', lineWidth:5};
     $scope.degatPhysique = {barColor:'#daae2b', lineWidth:5};
     $scope.degatCorporel = {barColor:'#E67E22', lineWidth:5};

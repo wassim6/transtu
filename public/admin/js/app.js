@@ -135,9 +135,11 @@ MetronicApp.run(function ($rootScope, $state, $location, $http, $resource, jwtHe
                 $location.path("/login");
             }
             else {
+                var tokenPayload = jwtHelper.decodeToken(user);
                 $rootScope.AuthenticatedUser = {
                     login: login,
-                    token: user
+                    token: user,
+                    role: tokenPayload.role
                 };
                 $http.defaults.headers.common['x-access-token'] =  $rootScope.AuthenticatedUser.token;
             }
@@ -191,7 +193,7 @@ MetronicApp.controller('AppController', ['$scope', '$rootScope', 'urlService', f
 }]);
 
 /* Setup Layout Part - Header */
-MetronicApp.controller('HeaderController', function ($timeout, $scope, $http, $rootScope, $state, $stateParams, $location, urlService, $resource) {
+MetronicApp.controller('HeaderController', function ($timeout, $interval, $scope, $http, $rootScope, $state, $stateParams, $location, urlService, $resource) {
 
     $scope.$on('$includeContentLoaded', function () {
         Layout.initHeader(); // init header
@@ -204,6 +206,20 @@ MetronicApp.controller('HeaderController', function ($timeout, $scope, $http, $r
             $scope.userHeader = response.data;
         });
     }, 1000);
+
+    $timeout(function () {
+        $resource(urlService + 'notification/navbar').get({}, function (res) {
+            $scope.headerNotification5 = res.notification5;
+            $scope.headerNotificationNotRead = res.notificationNotRead;
+        });
+    }, 1000);
+
+    $interval(function () {
+        $resource(urlService + 'notification/navbar').get({}, function (res) {
+            $scope.headerNotification5 = res.notification5;
+            $scope.headerNotificationNotRead = res.notificationNotRead;
+        });
+    }, 10000);
 
 
     $scope.logOut = function () {

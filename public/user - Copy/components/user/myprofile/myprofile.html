@@ -1,0 +1,155 @@
+<style>
+    .page-content-wrapper .page-content{
+        background: #F1F3FA;
+    }
+</style>
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar" style="background-color: #ffffff;">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#/dashboard.html">Dashbord</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            Mon profil
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row margin-top-20">
+    <div class="col-md-12">
+        <!-- BEGIN PROFILE SIDEBAR -->
+        <div data-ng-include="'admin/components/user/common/myProfileSidebar.html'" ng-init="activeLink=1" >
+        </div>
+        <!-- END BEGIN PROFILE SIDEBAR -->
+        <!-- BEGIN PROFILE CONTENT -->
+        <div class="profile-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- BEGIN PORTLET -->
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase">Activité</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="row number-stats margin-bottom-30">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="stat-number" style="float: none; display: block; text-align: center;">
+                                        <div class="title">
+                                            Total des accident ajouté
+                                        </div>
+                                        <div class="number">
+                                            {{ user.accident.length }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-scrollable table-scrollable-borderless">
+                                <table class="table table-hover table-light">
+                                    <thead>
+                                    <tr class="uppercase">
+                                        <th>
+                                            Date
+                                        </th>
+                                        <th>
+                                            Lieu
+                                        </th>
+                                        <th>
+                                            N° de ligne
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tr ng-repeat="a in user.accident  | limitTo:3" >
+                                        <td>
+                                            {{ a.date | date:'dd/MM/yyyy HH:mm'}}
+                                        </td>
+                                        <td>
+                                            {{ a.adress.name }}
+                                        </td>
+                                        <td>
+                                            {{ a.ligne }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PORTLET -->
+                </div>
+                <div class="col-md-6">
+                    <!-- BEGIN PORTLET -->
+                    <div class="portlet light">
+                        <div class="portlet-title tabbable-line">
+                            <div class="caption caption-md">
+                                <i class="icon-globe theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase">Journal de connection</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <!--BEGIN TABS-->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab_1_1">
+                                    <div class="scroller" style="height: 320px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+                                        <ul class="feeds">
+                                            <li ng-repeat="l in logs">
+                                                <a href="javascript:;">
+                                                    <div class="col1">
+                                                        <div class="cont" ng-if="l.type=='logIn'">
+                                                            <div class="cont-col1">
+                                                                <div class="label label-sm label-success">
+                                                                    <i class="fa fa-bell-o"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cont-col2">
+                                                                <div class="desc">
+                                                                    A ouvert une session
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont" ng-if="l.type=='logOut'">
+                                                            <div class="cont-col1">
+                                                                <div class="label label-sm label-danger">
+                                                                    <i class="fa fa-bolt"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cont-col2">
+                                                                <div class="desc">
+                                                                    A fermer sa session
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col2">
+                                                        <div class="date">
+                                                            {{ l.date | timeAgo }}
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END TABS-->
+                        </div>
+                    </div>
+                    <!-- END PORTLET -->
+                </div>
+            </div>
+        </div>
+        <!-- END PROFILE CONTENT -->
+    </div>
+</div>
+<!-- END PAGE CONTENT-->
+
+
+<!-- BEGIN MAIN JS -->
+<script>
+    TableAdvanced.init();
+</script>
+<!-- END MAIN JS -->

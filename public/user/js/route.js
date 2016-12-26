@@ -6,138 +6,139 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     $stateProvider
 
     // Dashboard
-        .state('dashboard', {
-            url: "/dashboard.html",
-            templateUrl: "admin/components/dashbord/dashboard.html",
-            data: {pageTitle: 'Admin Dashboard Template'},
-            controller: "DashboardCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            'admin/components/accident/accidentService.js',
-                            'admin/components/dashbord/DashboardCtrl.js'
-                        ]
-                    });
-                }]
-            }
+    .state('dashboard', {
+        url: "/dashboard.html",
+        templateUrl: "../admin/components/dashbord/dashboard.html",
+        data: {pageTitle: 'Admin Dashboard Template'},
+        controller: "DashboardCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/dashbord/DashbordService.js',
+                        '../admin/components/dashbord/DashboardCtrl.js'
+                    ]
+                });
+            }]
+        }
 
-        })
-        .state('accident/list', {
-            url: "/accident/list",
-            templateUrl: "admin/components/accident/list/accidentList.html",
-            data: {pageTitle: 'Accident List'},
-            controller: "AccidentListCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            'admin/components/accident/accidentService.js',
-                            'admin/components/accident/list/AccidentListCtrl.js'
-                        ]
-                    });
-                }]
-            }
-        })
-        .state('accident/add', {
-            url: "/accident/add",
-            templateUrl: "admin/components/accident/add/accidentAdd.html",
-            data: {pageTitle: 'Ajouter un Accident'},
-            controller: "AccidentAddCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            'admin/components/accident/accidentService.js',
-                            'admin/components/accident/add/AccidentAddCtrl.js'
-                        ]
-                    });
-                }]
-            }
-
-        })
-        .state('accident/edit/:id', {
-            url: "/accident/edit/:id",
-            templateUrl: "admin/components/accident/edit/accidentEdit.html",
-            data: {pageTitle: 'Modifier accident'},
-            controller: "AccidentEditCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            'admin/components/accident/accidentService.js',
-                            'admin/components/accident/edit/AccidentEditCtrl.js'
-                        ]
-                    });
-                }]
-            }
-        })
-        .state('accident/map', {
-            url: "/accident/map",
-            templateUrl: "admin/components/accident/map/map.html",
-            data: {pageTitle: 'Répartition géographique des accidents'},
-            controller: "AccidentMapCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            'admin/components/accident/accidentService.js',
-                            'admin/components/accident/map/AccidentMapCtrl.js'
-                        ]
-                    });
-                }]
-            }
-
-        })
-        .state('login', {
-            url: "/login",
-            templateUrl: "admin/components/login/login.html",
-            data: {pageTitle: 'Login'},
-            controller: "LoginCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            'admin/components/login/loginService.js',
-                            'admin/components/login/LoginCtrl.js'
-                        ]
-                    });
-                }]
-            }
-        })
-        .state('user/list', {
-        url: "/user/list",
-        templateUrl: "admin/components/user/list/userList.html",
-        data: {pageTitle: 'User List'},
-        controller: "UserListCtrl",
+    })
+    .state('accident/list', {
+        url: "/accident/list",
+        templateUrl: "../admin/components/accident/list/accidentList.html",
+        data: {pageTitle: 'Accident List'},
+        controller: "AccidentListCtrl",
         resolve: {
             deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load({
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/user/userService.js',
-                        'admin/components/user/list/UserListCtrl.js'
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/accident/list/AccidentListCtrl.js'
                     ]
                 });
             }]
         }
     })
+    .state('accident/add', {
+        url: "/accident/add",
+        templateUrl: "../admin/components/accident/add/accidentAdd.html",
+        data: {pageTitle: 'Ajouter un Accident'},
+        controller: "AccidentAddCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before',
+                    files: [
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/accident/add/AccidentAddCtrl.js'
+                    ]
+                });
+            }]
+        }
+
+    })
+    .state('accident/edit/:id', {
+        url: "/accident/edit/:id",
+        templateUrl: "../admin/components/accident/edit/accidentEdit.html",
+        data: {pageTitle: 'Modifier accident'},
+        controller: "AccidentEditCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before',
+                    files: [
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/accident/edit/AccidentEditCtrl.js'
+                    ]
+                });
+            }]
+        }
+    })
+    .state('accident/map', {
+        url: "/accident/map",
+        templateUrl: "../admin/components/accident/map/map.html",
+        data: {pageTitle: 'Répartition géographique des accidents'},
+        controller: "AccidentMapCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before',
+                    files: [
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/accident/map/AccidentMapCtrl.js'
+                    ]
+                });
+            }]
+        }
+
+    })
+    .state('login', {
+        url: "/login",
+        templateUrl: "../admin/components/login/login.html",
+        data: {pageTitle: 'Login'},
+        controller: "LoginCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before',
+                    files: [
+                        '../admin/components/login/loginService.js',
+                        '../admin/components/login/LoginCtrl.js'
+                    ]
+                });
+            }]
+        }
+    })
+    .state('user/list', {
+    url: "/user/list",
+    templateUrl: "../admin/components/user/list/userList.html",
+    data: {pageTitle: 'User List'},
+    controller: "UserListCtrl",
+    resolve: {
+        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+                name: 'MetronicApp',
+                insertBefore: '#ng_load_plugins_before',
+                files: [
+                    '../admin/components/user/userService.js',
+                    '../admin/components/user/list/UserListCtrl.js'
+                ]
+            });
+        }]
+    }
+})
     .state('user/detail/:id', {
         url: "/user/detail/:id",
-        templateUrl: "admin/components/user/detail/userDetail.html",
+        templateUrl: "../admin/components/user/detail/userDetail.html",
         data: {pageTitle: 'User Detail'},
         controller: "UserDetailCtrl",
         resolve: {
@@ -146,8 +147,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/user/userService.js',
-                        'admin/components/user/detail/UserDetailCtrl.js'
+                        '../admin/components/user/userService.js',
+                        '../admin/components/user/detail/UserDetailCtrl.js'
                     ]
                 });
             }]
@@ -155,7 +156,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('user/accident/:id', {
         url: "/user/accident/:id",
-        templateUrl: "admin/components/user/accidentAdded/accidentAdded.html",
+        templateUrl: "../admin/components/user/accidentAdded/accidentAdded.html",
         data: {pageTitle: 'User Accident Added'},
         controller: "AccidentAddedCtrl",
         resolve: {
@@ -164,9 +165,9 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/accident/accidentService.js',
-                        'admin/components/user/userService.js',
-                        'admin/components/user/accidentAdded/AccidentAddedCtrl.js'
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/user/userService.js',
+                        '../admin/components/user/accidentAdded/AccidentAddedCtrl.js'
                     ]
                 });
             }]
@@ -174,7 +175,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('user/setting/:id', {
         url: "/user/setting/:id",
-        templateUrl: "admin/components/user/setting/setting.html",
+        templateUrl: "../admin/components/user/setting/setting.html",
         data: {pageTitle: 'User setting'},
         controller: "UserSettingCtrl",
         resolve: {
@@ -183,8 +184,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/user/userService.js',
-                        'admin/components/user/setting/UserSettingCtrl.js'
+                        '../admin/components/user/userService.js',
+                        '../admin/components/user/setting/UserSettingCtrl.js'
                     ]
                 });
             }]
@@ -192,7 +193,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('user/add', {
         url: "/user/add",
-        templateUrl: "admin/components/user/add/add.html",
+        templateUrl: "../admin/components/user/add/add.html",
         data: {pageTitle: 'Ajouter un administrateur'},
         controller: "UserAddCtrl",
         resolve: {
@@ -201,16 +202,38 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/user/userService.js',
-                        'admin/components/user/add/UserAddCtrl.js'
+                        '../admin/components/user/userService.js',
+                        '../admin/components/user/add/UserAddCtrl.js'
                     ]
                 });
             }]
         }
     })
+    .state('user/mynotification', {
+        url: "/user/mynotification",
+        templateUrl: "../admin/components/user/myNotification/mynotification.html",
+        data: {pageTitle: 'Mes notifications'},
+        controller: "MyNotificationCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                        '../admin/components/user/userService.js',
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/dashbord/DashbordService.js',
+                        '../admin/components/user/myNotification/MyNotificationCtrl.js'
+                    ]
+                });
+            }]
+        }
+
+    })
+
     .state('myprofile', {
         url: "/myprofile",
-        templateUrl: "admin/components/user/myprofile/myprofile.html",
+        templateUrl: "../admin/components/user/myprofile/myprofile.html",
         data: {pageTitle: 'Mon profile'},
         controller: "MyProfileCtrl",
         resolve: {
@@ -219,8 +242,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/user/userService.js',
-                        'admin/components/user/myprofile/MyProfileCtrl.js'
+                        '../admin/components/user/userService.js',
+                        '../admin/components/user/myprofile/MyProfileCtrl.js'
                     ]
                 });
             }]
@@ -228,7 +251,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('myaccident', {
         url: "/myaccident",
-        templateUrl: "admin/components/user/myaccidentadded/myAccidentAdded.html",
+        templateUrl: "../admin/components/user/myaccidentadded/myAccidentAdded.html",
         data: {pageTitle: 'Mes accident ajouté'},
         controller: "MyAccidentAddedCtrl",
         resolve: {
@@ -237,9 +260,9 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/user/userService.js',
-                        'admin/components/accident/accidentService.js',
-                        'admin/components/user/myAccidentAdded/MyAccidentAddedCtrl.js'
+                        '../admin/components/user/userService.js',
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/user/myAccidentAdded/MyAccidentAddedCtrl.js'
                     ]
                 });
             }]
@@ -247,7 +270,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('mysetting', {
         url: "/mysetting",
-        templateUrl: "admin/components/user/mySetting/mySetting.html",
+        templateUrl: "../admin/components/user/mySetting/mySetting.html",
         data: {pageTitle: 'Paramètre du compte'},
         controller: "MySettingCtrl",
         resolve: {
@@ -256,8 +279,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/user/userService.js',
-                        'admin/components/user/mySetting/MySettingCtrl.js'
+                        '../admin/components/user/userService.js',
+                        '../admin/components/user/mySetting/MySettingCtrl.js'
                     ]
                 });
             }]
@@ -265,7 +288,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('stat', {
         url: "/stat",
-        templateUrl: "admin/components/stat/stat.html",
+        templateUrl: "../admin/components/stat/stat.html",
         data: {pageTitle: 'Statistique'},
         controller: "StatCtrl",
         resolve: {
@@ -274,8 +297,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/accident/accidentService.js',
-                        'admin/components/stat/StatCtrl.js'
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/stat/StatCtrl.js'
                     ]
                 });
             }]
@@ -283,7 +306,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('stat/corporels', {
         url: "/stat/corporels",
-        templateUrl: "admin/components/stat/corporels/corporels.html",
+        templateUrl: "../admin/components/stat/corporels/corporels.html",
         data: {pageTitle: 'Statistique des accidents corporels'},
         controller: "StatCorporelsCtrl",
         resolve: {
@@ -292,8 +315,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/accident/accidentService.js',
-                        'admin/components/stat/corporels/StatCorporelsCtrl.js'
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/stat/corporels/StatCorporelsCtrl.js'
                     ]
                 });
             }]
@@ -301,7 +324,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('stat/blesses', {
         url: "/stat/blesses",
-        templateUrl: "admin/components/stat/blesses/blesses.html",
+        templateUrl: "../admin/components/stat/blesses/blesses.html",
         data: {pageTitle: 'Statistique des accidents avec blessés'},
         controller: "StatBlessesCtrl",
         resolve: {
@@ -310,8 +333,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/accident/accidentService.js',
-                        'admin/components/stat/blesses/StatBlessesCtrl.js'
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/stat/blesses/StatBlessesCtrl.js'
                     ]
                 });
             }]
@@ -319,7 +342,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('stat/mortels', {
         url: "/stat/mortels",
-        templateUrl: "admin/components/stat/mortels/mortels.html",
+        templateUrl: "../admin/components/stat/mortels/mortels.html",
         data: {pageTitle: 'Statistique des accidents mortels'},
         controller: "StatMortelsCtrl",
         resolve: {
@@ -328,8 +351,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/accident/accidentService.js',
-                        'admin/components/stat/mortels/StatMortelsCtrl.js'
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/stat/mortels/StatMortelsCtrl.js'
                     ]
                 });
             }]
@@ -337,7 +360,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('stat/physique', {
         url: "/stat/physique",
-        templateUrl: "admin/components/stat/physique/physique.html",
+        templateUrl: "../admin/components/stat/physique/physique.html",
         data: {pageTitle: 'Statistique des accidents avec dégat physique'},
         controller: "StatPhysiqueCtrl",
         resolve: {
@@ -346,8 +369,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/accident/accidentService.js',
-                        'admin/components/stat/physique/StatPhysiqueCtrl.js'
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/stat/physique/StatPhysiqueCtrl.js'
                     ]
                 });
             }]
@@ -355,7 +378,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     })
     .state('stat/sans', {
         url: "/stat/sans",
-        templateUrl: "admin/components/stat/sans/sans.html",
+        templateUrl: "../admin/components/stat/sans/sans.html",
         data: {pageTitle: 'Statistique des accidents sans dégat physique et corporels'},
         controller: "StatSansCtrl",
         resolve: {
@@ -364,8 +387,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        'admin/components/accident/accidentService.js',
-                        'admin/components/stat/sans/StatSansCtrl.js'
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/stat/sans/StatSansCtrl.js'
                     ]
                 });
             }]

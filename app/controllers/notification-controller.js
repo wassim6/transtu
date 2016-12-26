@@ -15,7 +15,7 @@ function addNotification( accident) {
             }
             ,
             {
-                'role':'APCR'
+                'role':'responsable'
             }
         ]
 
@@ -78,7 +78,52 @@ function addNotification( accident) {
 };
 
 
+function notificationNavBar(request, response) {
+    var token = userController.isAuthorized(request, response, []);
+    if (typeof(token) == 'undefined' || token == -1)
+        return;
+    Notification.find({user:token.id}, function (error, notification5) {
+        Notification.find({isRead:false, user:token.id}).count( function (error, notificationNotRead) {
+            response.json({
+                notification5: notification5,
+                notificationNotRead:notificationNotRead,
+                code: 1
+            });
+        });
+    }).sort({'date': -1}).populate("user").populate("accident").limit(5);
+};
+
+function myNotification(request, response) {
+    var token = userController.isAuthorized(request, response, []);
+    if (typeof(token) == 'undefined' || token == -1)
+        return;
+    Notification.find({user:token.id}, function (error, notifications) {
+        response.json({
+            notifications: notifications,
+            code: 1
+        });
+    }).sort({'date': -1}).populate("user").populate("accident");
+};
+
+function readNotificationAccident(userId, accident) {
+    Notification.update({
+        "user": userId,
+        "accident": accident._id
+    }, {
+        isRead:true
+    }, function (err, model) {
+        if (err) {
+            return null;
+        }
+        else
+            return 1;
+    });
+};
+
 module.exports = {
-  addNotification:addNotification
+    addNotification:addNotification,
+    notificationNavBar:notificationNavBar,
+    myNotification:myNotification,
+    readNotificationAccident:readNotificationAccident
 };
 

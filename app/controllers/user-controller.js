@@ -106,7 +106,6 @@ function registerAdmin(request, response) {
         email: request.body.email,
         role: request.body.role,
         password: passwordHash.generate(request.body.password),
-        role: 'admin',
         gsm:request.body.gsm
     };
 
@@ -134,7 +133,7 @@ function authetificationAdmin(request, response) {
                 response.json({message: 'error', code: -1});
                 return;
             }
-            if (user.role != 'admin') {
+            if (user.role == 'user' ) {
                 response.json({message: 'unauthorised', code: -1});
                 return;
             }
@@ -151,7 +150,8 @@ function authetificationAdmin(request, response) {
                 code: 1,
                 message: 'succes',
                 token: token,
-                login: payload.firstName
+                login: payload.firstName,
+                role:user.role
             });
 
         }
@@ -383,6 +383,36 @@ function editPass(request, response) {
     }).select('+password');
 }
 
+function editRole(request, response) {
+    var token = isAuthorized(request, response, ["admin"]);
+    if (typeof(token) == 'undefined' || token == -1)
+        return;
+    User.findById(request.body.id,function(error, user) {
+        if (error){
+            console.error('Could not retrieve user b/c:', user);
+            response.status(400).send('error');
+        }
+        else
+        {
+            if (typeof(request.body.role) == 'undefined' ) {
+                response.json({message: 'error', code: -1});
+                return;
+            }
+            user.role=request.body.role;
+            user.save(function(error) {
+                if (error) {
+                    console.error('Not able to update user b/c:', error);
+                    response.status(400).json('error');
+                }
+                else{
+                    response.json({message: 'User successfully updated', code:1, data:user});
+                }
+            });
+        }
+    });
+}
+
+
 /* Utils */
 
 function AddActivityLog(userId, type, device) {
@@ -443,5 +473,6 @@ module.exports = {
     myActivityLog:myActivityLog,
     editProfileImage:editProfileImage,
     editInfo:editInfo,
-    editPass:editPass
+    editPass:editPass,
+    editRole:editRole
 };

@@ -119,3 +119,4 @@ function ModalInstanceCtrl($scope, $modalInstance, $timeout , items, AccidentSer
     };
 
 }
+

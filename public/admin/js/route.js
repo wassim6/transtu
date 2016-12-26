@@ -6,135 +6,136 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
     $stateProvider
 
     // Dashboard
-        .state('dashboard', {
-            url: "/dashboard.html",
-            templateUrl: "../admin/components/dashbord/dashboard.html",
-            data: {pageTitle: 'Admin Dashboard Template'},
-            controller: "DashboardCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            '../admin/components/accident/accidentService.js',
-                            '../admin/components/dashbord/DashboardCtrl.js'
-                        ]
-                    });
-                }]
-            }
+    .state('dashboard', {
+        url: "/dashboard.html",
+        templateUrl: "../admin/components/dashbord/dashboard.html",
+        data: {pageTitle: 'Admin Dashboard Template'},
+        controller: "DashboardCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/dashbord/DashbordService.js',
+                        '../admin/components/dashbord/DashboardCtrl.js'
+                    ]
+                });
+            }]
+        }
 
-        })
-        .state('accident/list', {
-            url: "/accident/list",
-            templateUrl: "../admin/components/accident/list/accidentList.html",
-            data: {pageTitle: 'Accident List'},
-            controller: "AccidentListCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            '../admin/components/accident/accidentService.js',
-                            '../admin/components/accident/list/AccidentListCtrl.js'
-                        ]
-                    });
-                }]
-            }
-        })
-        .state('accident/add', {
-            url: "/accident/add",
-            templateUrl: "../admin/components/accident/add/accidentAdd.html",
-            data: {pageTitle: 'Ajouter un Accident'},
-            controller: "AccidentAddCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            '../admin/components/accident/accidentService.js',
-                            '../admin/components/accident/add/AccidentAddCtrl.js'
-                        ]
-                    });
-                }]
-            }
-
-        })
-        .state('accident/edit/:id', {
-            url: "/accident/edit/:id",
-            templateUrl: "../admin/components/accident/edit/accidentEdit.html",
-            data: {pageTitle: 'Modifier accident'},
-            controller: "AccidentEditCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            '../admin/components/accident/accidentService.js',
-                            '../admin/components/accident/edit/AccidentEditCtrl.js'
-                        ]
-                    });
-                }]
-            }
-        })
-        .state('accident/map', {
-            url: "/accident/map",
-            templateUrl: "../admin/components/accident/map/map.html",
-            data: {pageTitle: 'Répartition géographique des accidents'},
-            controller: "AccidentMapCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            '../admin/components/accident/accidentService.js',
-                            '../admin/components/accident/map/AccidentMapCtrl.js'
-                        ]
-                    });
-                }]
-            }
-
-        })
-        .state('login', {
-            url: "/login",
-            templateUrl: "../admin/components/login/login.html",
-            data: {pageTitle: 'Login'},
-            controller: "LoginCtrl",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before',
-                        files: [
-                            '../admin/components/login/loginService.js',
-                            '../admin/components/login/LoginCtrl.js'
-                        ]
-                    });
-                }]
-            }
-        })
-        .state('user/list', {
-        url: "/user/list",
-        templateUrl: "../admin/components/user/list/userList.html",
-        data: {pageTitle: 'User List'},
-        controller: "UserListCtrl",
+    })
+    .state('accident/list', {
+        url: "/accident/list",
+        templateUrl: "../admin/components/accident/list/accidentList.html",
+        data: {pageTitle: 'Accident List'},
+        controller: "AccidentListCtrl",
         resolve: {
             deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load({
                     name: 'MetronicApp',
                     insertBefore: '#ng_load_plugins_before',
                     files: [
-                        '../admin/components/user/userService.js',
-                        '../admin/components/user/list/UserListCtrl.js'
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/accident/list/AccidentListCtrl.js'
                     ]
                 });
             }]
         }
     })
+    .state('accident/add', {
+        url: "/accident/add",
+        templateUrl: "../admin/components/accident/add/accidentAdd.html",
+        data: {pageTitle: 'Ajouter un Accident'},
+        controller: "AccidentAddCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before',
+                    files: [
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/accident/add/AccidentAddCtrl.js'
+                    ]
+                });
+            }]
+        }
+
+    })
+    .state('accident/edit/:id', {
+        url: "/accident/edit/:id",
+        templateUrl: "../admin/components/accident/edit/accidentEdit.html",
+        data: {pageTitle: 'Modifier accident'},
+        controller: "AccidentEditCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before',
+                    files: [
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/accident/edit/AccidentEditCtrl.js'
+                    ]
+                });
+            }]
+        }
+    })
+    .state('accident/map', {
+        url: "/accident/map",
+        templateUrl: "../admin/components/accident/map/map.html",
+        data: {pageTitle: 'Répartition géographique des accidents'},
+        controller: "AccidentMapCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before',
+                    files: [
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/accident/map/AccidentMapCtrl.js'
+                    ]
+                });
+            }]
+        }
+
+    })
+    .state('login', {
+        url: "/login",
+        templateUrl: "../admin/components/login/login.html",
+        data: {pageTitle: 'Login'},
+        controller: "LoginCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before',
+                    files: [
+                        '../admin/components/login/loginService.js',
+                        '../admin/components/login/LoginCtrl.js'
+                    ]
+                });
+            }]
+        }
+    })
+    .state('user/list', {
+    url: "/user/list",
+    templateUrl: "../admin/components/user/list/userList.html",
+    data: {pageTitle: 'User List'},
+    controller: "UserListCtrl",
+    resolve: {
+        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+                name: 'MetronicApp',
+                insertBefore: '#ng_load_plugins_before',
+                files: [
+                    '../admin/components/user/userService.js',
+                    '../admin/components/user/list/UserListCtrl.js'
+                ]
+            });
+        }]
+    }
+})
     .state('user/detail/:id', {
         url: "/user/detail/:id",
         templateUrl: "../admin/components/user/detail/userDetail.html",
@@ -208,6 +209,28 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
             }]
         }
     })
+    .state('user/mynotification', {
+        url: "/user/mynotification",
+        templateUrl: "../admin/components/user/myNotification/mynotification.html",
+        data: {pageTitle: 'Mes notifications'},
+        controller: "MyNotificationCtrl",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'MetronicApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                        '../admin/components/user/userService.js',
+                        '../admin/components/accident/accidentService.js',
+                        '../admin/components/dashbord/DashbordService.js',
+                        '../admin/components/user/myNotification/MyNotificationCtrl.js'
+                    ]
+                });
+            }]
+        }
+
+    })
+
     .state('myprofile', {
         url: "/myprofile",
         templateUrl: "../admin/components/user/myprofile/myprofile.html",
